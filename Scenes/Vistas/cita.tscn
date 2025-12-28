@@ -1,0 +1,269 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgwv6jwqqjsam"]
+
+[ext_resource type="Theme" uid="uid://63lmbp6v151r" path="res://Sprites/Config/theme.tres" id="1_kpiap"]
+[ext_resource type="Texture2D" uid="uid://b244g0uibf8dn" path="res://Sprites/General/banner.png" id="2_hm0wo"]
+[ext_resource type="Script" uid="uid://dr4en53e2ufet" path="res://Scripts/Vistas/cita.gd" id="2_ycd8v"]
+[ext_resource type="Texture2D" uid="uid://bmxkvimhor7gv" path="res://Sprites/General/default_card.png" id="3_ycd8v"]
+[ext_resource type="Texture2D" uid="uid://bmxhessk3b63h" path="res://Sprites/General/generos_strip4.png" id="4_q8nkb"]
+
+[node name="Cita" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_kpiap")
+script = ExtResource("2_ycd8v")
+metadata/_edit_lock_ = true
+
+[node name="Header" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -57.0
+offset_right = 621.0
+offset_bottom = 188.333
+texture = ExtResource("2_hm0wo")
+expand_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="Header"]
+layout_mode = 0
+offset_top = 168.0
+offset_right = 621.0
+offset_bottom = 246.0
+metadata/_edit_lock_ = true
+
+[node name="BtnMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 12.0
+offset_right = 76.0
+offset_bottom = 68.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_kpiap")
+text = "<"
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 619.0
+offset_bottom = 109.0
+theme = ExtResource("1_kpiap")
+theme_override_font_sizes/font_size = 50
+text = "Date"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Monstruo1" type="Panel" parent="."]
+self_modulate = Color(0.716296, 0.716296, 0.716296, 1)
+layout_mode = 0
+offset_left = 18.0
+offset_top = 135.0
+offset_right = 292.0
+offset_bottom = 560.0
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="Monstruo1"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 14.0
+offset_right = 216.0
+offset_bottom = 254.0
+mouse_filter = 2
+texture = ExtResource("3_ycd8v")
+expand_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Nombre" type="Label" parent="Monstruo1"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 249.0
+offset_right = 273.0
+offset_bottom = 371.0
+theme_override_font_sizes/font_size = 25
+text = "Nombre"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Nivel" type="Label" parent="Monstruo1"]
+self_modulate = Color(0.345098, 0.243137, 0.14902, 1)
+layout_mode = 0
+offset_left = 36.0
+offset_top = 368.0
+offset_right = 237.0
+offset_bottom = 425.0
+text = "LVL: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Monstruo2" type="Panel" parent="."]
+self_modulate = Color(0.716296, 0.716296, 0.716296, 1)
+layout_mode = 0
+offset_left = 328.0
+offset_top = 136.0
+offset_right = 602.0
+offset_bottom = 561.0
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="Monstruo2"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 14.0
+offset_right = 216.0
+offset_bottom = 254.0
+mouse_filter = 2
+texture = ExtResource("3_ycd8v")
+expand_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Nombre" type="Label" parent="Monstruo2"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 249.0
+offset_right = 273.0
+offset_bottom = 371.0
+theme_override_font_sizes/font_size = 25
+text = "Nombre"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Nivel" type="Label" parent="Monstruo2"]
+self_modulate = Color(0.345098, 0.243137, 0.14902, 1)
+layout_mode = 0
+offset_left = 36.0
+offset_top = 368.0
+offset_right = 237.0
+offset_bottom = 425.0
+text = "LVL: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="BtnLeft" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 0
+offset_left = 329.0
+offset_top = 140.0
+offset_right = 463.0
+offset_bottom = 555.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_kpiap")
+metadata/_edit_lock_ = true
+
+[node name="BtnRight" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 0
+offset_left = 468.0
+offset_top = 141.0
+offset_right = 602.0
+offset_bottom = 556.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_kpiap")
+metadata/_edit_lock_ = true
+
+[node name="BtnNombre1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 583.0
+offset_right = 105.0
+offset_bottom = 658.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_kpiap")
+metadata/_edit_lock_ = true
+
+[node name="Genero" type="Sprite2D" parent="BtnNombre1"]
+self_modulate = Color(1, 1, 1, 0.537255)
+position = Vector2(36, 40)
+scale = Vector2(0.233425, 0.208029)
+texture = ExtResource("4_q8nkb")
+hframes = 4
+metadata/_edit_lock_ = true
+
+[node name="LinNombre1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 582.0
+offset_right = 597.0
+offset_bottom = 655.0
+theme = ExtResource("1_kpiap")
+placeholder_text = "Nombre"
+alignment = 1
+max_length = 21
+caret_blink = true
+caret_blink_interval = 0.4
+metadata/_edit_lock_ = true
+
+[node name="BtnNombre2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 672.0
+offset_right = 107.0
+offset_bottom = 747.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_kpiap")
+metadata/_edit_lock_ = true
+
+[node name="Genero" type="Sprite2D" parent="BtnNombre2"]
+self_modulate = Color(1, 1, 1, 0.537255)
+position = Vector2(36, 40)
+scale = Vector2(0.233425, 0.208029)
+texture = ExtResource("4_q8nkb")
+hframes = 4
+frame = 1
+metadata/_edit_lock_ = true
+
+[node name="LinNombre2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 671.0
+offset_right = 599.0
+offset_bottom = 744.0
+theme = ExtResource("1_kpiap")
+placeholder_text = "Nombre"
+alignment = 1
+max_length = 21
+caret_blink = true
+caret_blink_interval = 0.4
+metadata/_edit_lock_ = true
+
+[node name="Informacion" type="Label" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 763.0
+offset_right = 597.0
+offset_bottom = 988.0
+theme = ExtResource("1_kpiap")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "The monsters will have a date in any place they choose. If all is okey, they can generate a new monster choosing one of the two names, depending on chance. But if not, they definitely won't go out together again"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="BtnCita" type="Button" parent="."]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 1017.0
+offset_right = 495.0
+offset_bottom = 1085.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_kpiap")
+text = "Date"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="BtnMenu" to="." method="_on_btn_menu_pressed"]

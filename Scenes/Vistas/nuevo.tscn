@@ -1,0 +1,191 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckgnj3i683eqw"]
+
+[ext_resource type="Theme" uid="uid://63lmbp6v151r" path="res://Sprites/Config/theme.tres" id="1_cnhxx"]
+[ext_resource type="Texture2D" uid="uid://b244g0uibf8dn" path="res://Sprites/General/banner.png" id="2_fm6lg"]
+[ext_resource type="Script" uid="uid://bw21sm86l6jl4" path="res://Scripts/Vistas/nuevo.gd" id="2_kfyhy"]
+[ext_resource type="Texture2D" uid="uid://bmxhessk3b63h" path="res://Sprites/General/generos_strip4.png" id="3_kfyhy"]
+[ext_resource type="PackedScene" uid="uid://dn2echf0jl315" path="res://Scenes/Componentes/option.tscn" id="4_qspvr"]
+
+[node name="Nuevo" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cnhxx")
+script = ExtResource("2_kfyhy")
+metadata/_edit_lock_ = true
+
+[node name="Header" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -57.0
+offset_right = 621.0
+offset_bottom = 188.333
+texture = ExtResource("2_fm6lg")
+expand_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="Header"]
+layout_mode = 0
+offset_top = 168.0
+offset_right = 621.0
+offset_bottom = 246.0
+metadata/_edit_lock_ = true
+
+[node name="BtnMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 12.0
+offset_right = 76.0
+offset_bottom = 68.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_cnhxx")
+text = "<"
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 619.0
+offset_bottom = 109.0
+theme = ExtResource("1_cnhxx")
+theme_override_font_sizes/font_size = 50
+text = "Creation"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnNombre" type="Button" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 139.0
+offset_right = 100.0
+offset_bottom = 214.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_cnhxx")
+text = "?"
+metadata/_edit_lock_ = true
+
+[node name="LinNombre" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 138.0
+offset_right = 592.0
+offset_bottom = 210.0
+theme = ExtResource("1_cnhxx")
+placeholder_text = "Nombre"
+alignment = 1
+max_length = 21
+caret_blink = true
+caret_blink_interval = 0.4
+metadata/_edit_lock_ = true
+
+[node name="Informacion" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 229.0
+offset_right = 425.0
+offset_bottom = 322.0
+theme = ExtResource("1_cnhxx")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "the monter level it depend on how many items below you select"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="BtnGenero" type="Button" parent="."]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 239.0
+offset_right = 586.0
+offset_bottom = 316.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_cnhxx")
+metadata/_edit_lock_ = true
+
+[node name="Genero" type="Sprite2D" parent="BtnGenero"]
+self_modulate = Color(1, 1, 1, 0.537255)
+position = Vector2(59, 37)
+scale = Vector2(0.233425, 0.208029)
+texture = ExtResource("3_kfyhy")
+hframes = 4
+frame = 1
+metadata/_edit_lock_ = true
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 342.0
+offset_right = 609.0
+offset_bottom = 989.0
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Options" type="VBoxContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Option1" parent="Scroll/Options" instance=ExtResource("4_qspvr")]
+layout_mode = 2
+
+[node name="Option2" parent="Scroll/Options" instance=ExtResource("4_qspvr")]
+layout_mode = 2
+
+[node name="Option3" parent="Scroll/Options" instance=ExtResource("4_qspvr")]
+layout_mode = 2
+
+[node name="Option4" parent="Scroll/Options" instance=ExtResource("4_qspvr")]
+layout_mode = 2
+
+[node name="Option5" parent="Scroll/Options" instance=ExtResource("4_qspvr")]
+layout_mode = 2
+
+[node name="Option6" parent="Scroll/Options" instance=ExtResource("4_qspvr")]
+layout_mode = 2
+
+[node name="Option7" parent="Scroll/Options" instance=ExtResource("4_qspvr")]
+layout_mode = 2
+
+[node name="Option8" parent="Scroll/Options" instance=ExtResource("4_qspvr")]
+layout_mode = 2
+
+[node name="Option9" parent="Scroll/Options" instance=ExtResource("4_qspvr")]
+layout_mode = 2
+
+[node name="Option10" parent="Scroll/Options" instance=ExtResource("4_qspvr")]
+layout_mode = 2
+
+[node name="Option11" parent="Scroll/Options" instance=ExtResource("4_qspvr")]
+layout_mode = 2
+
+[node name="Option12" parent="Scroll/Options" instance=ExtResource("4_qspvr")]
+layout_mode = 2
+
+[node name="Option13" parent="Scroll/Options" instance=ExtResource("4_qspvr")]
+layout_mode = 2
+
+[node name="BtnCrear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 1017.0
+offset_right = 495.0
+offset_bottom = 1085.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_cnhxx")
+text = "Create"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="BtnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="BtnNombre" to="." method="_on_btn_nombre_pressed"]
+[connection signal="pressed" from="BtnGenero" to="." method="_on_btn_genero_pressed"]
+[connection signal="pressed" from="BtnCrear" to="." method="_on_btn_crear_pressed"]

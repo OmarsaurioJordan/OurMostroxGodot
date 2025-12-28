@@ -1,0 +1,291 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtik1m3phjus7"]
+
+[ext_resource type="Theme" uid="uid://63lmbp6v151r" path="res://Sprites/Config/theme.tres" id="1_lr52v"]
+[ext_resource type="Texture2D" uid="uid://cmnmkoqcvjtq" path="res://Sprites/Caracteristicas/0_0.png" id="2_5e4vs"]
+[ext_resource type="Script" uid="uid://cyqgd5eek3doq" path="res://Scripts/Componentes/caracteristicas.gd" id="2_42kj3"]
+
+[node name="Caracteristicas" type="Label"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+offset_right = 572.0
+offset_bottom = 243.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_lr52v")
+theme_override_font_sizes/font_size = 27
+text = ".
+.
+.
+.
+.
+."
+script = ExtResource("2_42kj3")
+metadata/_edit_lock_ = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 6.0
+offset_right = 535.0
+offset_bottom = 239.0
+mouse_filter = 2
+columns = 5
+metadata/_edit_lock_ = true
+
+[node name="Item1" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "...............
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item1"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 6.0
+offset_right = 95.0
+offset_bottom = 68.0
+mouse_filter = 2
+texture = ExtResource("2_5e4vs")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Item2" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "...............
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item2"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 6.0
+offset_right = 95.0
+offset_bottom = 68.0
+mouse_filter = 2
+texture = ExtResource("2_5e4vs")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Item3" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "...............
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item3"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 6.0
+offset_right = 95.0
+offset_bottom = 68.0
+mouse_filter = 2
+texture = ExtResource("2_5e4vs")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Item4" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "...............
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item4"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 6.0
+offset_right = 95.0
+offset_bottom = 68.0
+mouse_filter = 2
+texture = ExtResource("2_5e4vs")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Item5" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "...............
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item5"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 6.0
+offset_right = 95.0
+offset_bottom = 68.0
+mouse_filter = 2
+texture = ExtResource("2_5e4vs")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Item6" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "...............
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item6"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 6.0
+offset_right = 95.0
+offset_bottom = 68.0
+mouse_filter = 2
+texture = ExtResource("2_5e4vs")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Item7" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "...............
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item7"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 6.0
+offset_right = 95.0
+offset_bottom = 68.0
+mouse_filter = 2
+texture = ExtResource("2_5e4vs")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Item8" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "...............
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item8"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 6.0
+offset_right = 95.0
+offset_bottom = 68.0
+mouse_filter = 2
+texture = ExtResource("2_5e4vs")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Item9" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "...............
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item9"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 6.0
+offset_right = 95.0
+offset_bottom = 68.0
+mouse_filter = 2
+texture = ExtResource("2_5e4vs")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Item10" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "...............
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item10"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 6.0
+offset_right = 95.0
+offset_bottom = 68.0
+mouse_filter = 2
+texture = ExtResource("2_5e4vs")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Item11" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "...............
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item11"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 6.0
+offset_right = 95.0
+offset_bottom = 68.0
+mouse_filter = 2
+texture = ExtResource("2_5e4vs")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Item12" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "...............
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item12"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 6.0
+offset_right = 95.0
+offset_bottom = 68.0
+mouse_filter = 2
+texture = ExtResource("2_5e4vs")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Item13" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "...............
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item13"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 6.0
+offset_right = 95.0
+offset_bottom = 68.0
+mouse_filter = 2
+texture = ExtResource("2_5e4vs")
+expand_mode = 1
+metadata/_edit_lock_ = true

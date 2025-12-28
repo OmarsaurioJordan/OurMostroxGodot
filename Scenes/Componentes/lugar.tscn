@@ -1,0 +1,472 @@
+[gd_scene load_steps=12 format=3 uid="uid://qwegldmplxjb"]
+
+[ext_resource type="Theme" uid="uid://63lmbp6v151r" path="res://Sprites/Config/theme.tres" id="1_iaosk"]
+[ext_resource type="Script" uid="uid://drejmlvcfgean" path="res://Scripts/Componentes/lugar.gd" id="2_lb2tq"]
+[ext_resource type="Texture2D" uid="uid://ydqnr2v8m685" path="res://Sprites/Terrenos/terreno1.png" id="2_t4b3o"]
+[ext_resource type="Texture2D" uid="uid://bhy1utj27ajhf" path="res://Sprites/Terrenos/terreno2.png" id="3_2iugm"]
+[ext_resource type="Texture2D" uid="uid://c7ow8bb68cpj4" path="res://Sprites/Terrenos/terreno3.png" id="4_6qyuq"]
+[ext_resource type="Texture2D" uid="uid://4c52oj8pyva7" path="res://Sprites/Terrenos/terreno4.png" id="5_7qu7p"]
+[ext_resource type="Texture2D" uid="uid://cl6u4k1d8dpb6" path="res://Sprites/Terrenos/terreno5.png" id="6_ya8wi"]
+[ext_resource type="Texture2D" uid="uid://cst74hw7ocbjl" path="res://Sprites/Terrenos/terreno6.png" id="7_gljhq"]
+[ext_resource type="Texture2D" uid="uid://c67rp1xycltjh" path="res://Sprites/Terrenos/terreno7.png" id="8_78jd5"]
+[ext_resource type="Texture2D" uid="uid://babl4nwrn270r" path="res://Sprites/Terrenos/terreno8.png" id="9_kdw75"]
+[ext_resource type="Texture2D" uid="uid://d2v4x7paxbmya" path="res://Sprites/Terrenos/terreno9.png" id="10_lsluy"]
+
+[node name="Lugar" type="Label"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+offset_right = 554.0
+offset_bottom = 227.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_iaosk")
+theme_override_font_sizes/font_size = 27
+text = ".
+.
+.
+.
+.
+."
+script = ExtResource("2_lb2tq")
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 520.0
+offset_bottom = 46.0
+text = "Place"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 49.0
+offset_right = 467.0
+offset_bottom = 323.0
+mouse_filter = 2
+columns = 3
+metadata/_edit_lock_ = true
+
+[node name="Item1" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = ".................
+.
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnOpt" type="Button" parent="GridContainer/Item1"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 132.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_iaosk")
+toggle_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item1"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 87.0
+mouse_filter = 2
+texture = ExtResource("2_t4b3o")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="GridContainer/Item1"]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 129.0
+offset_bottom = 135.0
+theme = ExtResource("1_iaosk")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 18
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Item2" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = ".................
+.
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnOpt" type="Button" parent="GridContainer/Item2"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 132.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_iaosk")
+toggle_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item2"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 87.0
+mouse_filter = 2
+texture = ExtResource("3_2iugm")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="GridContainer/Item2"]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 129.0
+offset_bottom = 135.0
+theme = ExtResource("1_iaosk")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 18
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Item3" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = ".................
+.
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnOpt" type="Button" parent="GridContainer/Item3"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 132.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_iaosk")
+toggle_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item3"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 87.0
+mouse_filter = 2
+texture = ExtResource("4_6qyuq")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="GridContainer/Item3"]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 129.0
+offset_bottom = 135.0
+theme = ExtResource("1_iaosk")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 18
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Item4" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = ".................
+.
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnOpt" type="Button" parent="GridContainer/Item4"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 132.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_iaosk")
+toggle_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item4"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 87.0
+mouse_filter = 2
+texture = ExtResource("5_7qu7p")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="GridContainer/Item4"]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 129.0
+offset_bottom = 135.0
+theme = ExtResource("1_iaosk")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 18
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Item5" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = ".................
+.
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnOpt" type="Button" parent="GridContainer/Item5"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 132.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_iaosk")
+toggle_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item5"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 87.0
+mouse_filter = 2
+texture = ExtResource("6_ya8wi")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="GridContainer/Item5"]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 129.0
+offset_bottom = 135.0
+theme = ExtResource("1_iaosk")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 18
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Item6" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = ".................
+.
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnOpt" type="Button" parent="GridContainer/Item6"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 132.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_iaosk")
+toggle_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item6"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 87.0
+mouse_filter = 2
+texture = ExtResource("7_gljhq")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="GridContainer/Item6"]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 129.0
+offset_bottom = 135.0
+theme = ExtResource("1_iaosk")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 18
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Item7" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = ".................
+.
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnOpt" type="Button" parent="GridContainer/Item7"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 132.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_iaosk")
+toggle_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item7"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 87.0
+mouse_filter = 2
+texture = ExtResource("8_78jd5")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="GridContainer/Item7"]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 129.0
+offset_bottom = 135.0
+theme = ExtResource("1_iaosk")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 18
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Item8" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = ".................
+.
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnOpt" type="Button" parent="GridContainer/Item8"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 132.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_iaosk")
+toggle_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item8"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 87.0
+mouse_filter = 2
+texture = ExtResource("9_kdw75")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="GridContainer/Item8"]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 129.0
+offset_bottom = 135.0
+theme = ExtResource("1_iaosk")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 18
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Item9" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = ".................
+.
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnOpt" type="Button" parent="GridContainer/Item9"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 132.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_iaosk")
+toggle_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item9"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 87.0
+mouse_filter = 2
+texture = ExtResource("10_lsluy")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="GridContainer/Item9"]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 129.0
+offset_bottom = 135.0
+theme = ExtResource("1_iaosk")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 18
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true

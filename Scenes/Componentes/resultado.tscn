@@ -1,0 +1,282 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmfa6akihi70p"]
+
+[ext_resource type="Theme" uid="uid://63lmbp6v151r" path="res://Sprites/Config/theme.tres" id="1_go5c6"]
+[ext_resource type="Script" uid="uid://ejdlxk0yxt8y" path="res://Scripts/Componentes/resultado.gd" id="2_qfvia"]
+[ext_resource type="Texture2D" uid="uid://bmxkvimhor7gv" path="res://Sprites/General/default_card.png" id="2_ylbn5"]
+[ext_resource type="Texture2D" uid="uid://bmxhessk3b63h" path="res://Sprites/General/generos_strip4.png" id="3_qfvia"]
+
+[node name="Resultado" type="Label"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+offset_right = 554.0
+offset_bottom = 273.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_go5c6")
+theme_override_font_sizes/font_size = 12
+text = ".
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+."
+script = ExtResource("2_qfvia")
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 10.0
+offset_right = 173.0
+offset_bottom = 170.0
+mouse_filter = 2
+texture = ExtResource("2_ylbn5")
+expand_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Nombre" type="Label" parent="."]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 14.0
+offset_right = 541.0
+offset_bottom = 116.0
+text = "Nombre"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Nivel" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0.513726)
+layout_mode = 0
+offset_left = 261.0
+offset_top = 133.0
+offset_right = 391.0
+offset_bottom = 190.0
+text = "LVL: 1"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Total" type="Label" parent="."]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 135.0
+offset_right = 530.0
+offset_bottom = 192.0
+text = "vic: 0%"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Genero" type="Sprite2D" parent="."]
+position = Vector2(222, 163)
+scale = Vector2(0.233425, 0.208029)
+texture = ExtResource("3_qfvia")
+hframes = 4
+frame = 1
+metadata/_edit_lock_ = true
+
+[node name="Lugares" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 204.0
+offset_right = 541.0
+offset_bottom = 250.0
+mouse_filter = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Lug0" type="Label" parent="Lugares"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Zone1: 80% - 30%"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnSeleccion" type="Button" parent="Lugares/Lug0"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = 6.0
+offset_right = 336.0
+offset_bottom = 40.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_go5c6")
+metadata/_edit_lock_ = true
+
+[node name="Lug1" type="Label" parent="Lugares"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Zone1: 80% - 30%"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnSeleccion" type="Button" parent="Lugares/Lug1"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = 6.0
+offset_right = 336.0
+offset_bottom = 40.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_go5c6")
+metadata/_edit_lock_ = true
+
+[node name="Lug2" type="Label" parent="Lugares"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Zone1: 80% - 30%"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnSeleccion" type="Button" parent="Lugares/Lug2"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = 6.0
+offset_right = 336.0
+offset_bottom = 40.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_go5c6")
+metadata/_edit_lock_ = true
+
+[node name="Lug3" type="Label" parent="Lugares"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Zone1: 80% - 30%"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnSeleccion" type="Button" parent="Lugares/Lug3"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = 6.0
+offset_right = 336.0
+offset_bottom = 40.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_go5c6")
+metadata/_edit_lock_ = true
+
+[node name="Lug4" type="Label" parent="Lugares"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Zone1: 80% - 30%"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnSeleccion" type="Button" parent="Lugares/Lug4"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = 6.0
+offset_right = 336.0
+offset_bottom = 40.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_go5c6")
+metadata/_edit_lock_ = true
+
+[node name="Lug5" type="Label" parent="Lugares"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Zone1: 80% - 30%"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnSeleccion" type="Button" parent="Lugares/Lug5"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = 6.0
+offset_right = 336.0
+offset_bottom = 40.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_go5c6")
+metadata/_edit_lock_ = true
+
+[node name="Lug6" type="Label" parent="Lugares"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Zone1: 80% - 30%"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnSeleccion" type="Button" parent="Lugares/Lug6"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = 6.0
+offset_right = 336.0
+offset_bottom = 40.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_go5c6")
+metadata/_edit_lock_ = true
+
+[node name="Lug7" type="Label" parent="Lugares"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Zone1: 80% - 30%"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnSeleccion" type="Button" parent="Lugares/Lug7"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = 6.0
+offset_right = 336.0
+offset_bottom = 40.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_go5c6")
+metadata/_edit_lock_ = true
+
+[node name="Lug8" type="Label" parent="Lugares"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Zone1: 80% - 30%"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnSeleccion" type="Button" parent="Lugares/Lug8"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = 6.0
+offset_right = 336.0
+offset_bottom = 40.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_go5c6")
+metadata/_edit_lock_ = true
+
+[node name="Lug9" type="Label" parent="Lugares"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Zone1: 80% - 30%"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnSeleccion" type="Button" parent="Lugares/Lug9"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = 6.0
+offset_right = 336.0
+offset_bottom = 40.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_go5c6")
+metadata/_edit_lock_ = true

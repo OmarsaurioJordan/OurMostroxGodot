@@ -1,0 +1,113 @@
+[gd_scene load_steps=5 format=3 uid="uid://dacn2ep32ifrp"]
+
+[ext_resource type="Theme" uid="uid://63lmbp6v151r" path="res://Sprites/Config/theme.tres" id="1_cayip"]
+[ext_resource type="Texture2D" uid="uid://b244g0uibf8dn" path="res://Sprites/General/banner.png" id="2_158mb"]
+[ext_resource type="Script" uid="uid://ba0t0iweqplkr" path="res://Scripts/Vistas/menu.gd" id="2_eka4x"]
+[ext_resource type="Texture2D" uid="uid://dekxhbrov2cx1" path="res://Sprites/General/monsters.png" id="3_wwsa2"]
+
+[node name="Menu" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cayip")
+script = ExtResource("2_eka4x")
+metadata/_edit_lock_ = true
+
+[node name="Header" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -25.0
+offset_right = 621.0
+offset_bottom = 221.0
+texture = ExtResource("2_158mb")
+expand_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 0
+offset_top = 122.0
+offset_right = 619.0
+offset_bottom = 219.0
+theme = ExtResource("1_cayip")
+theme_override_font_sizes/font_size = 60
+text = "Our Mostrox"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Portada" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 248.0
+offset_right = 507.0
+offset_bottom = 729.0
+texture = ExtResource("3_wwsa2")
+expand_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="BtnPlay" type="Button" parent="Portada"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 0
+offset_left = 2.0
+offset_right = 386.0
+offset_bottom = 482.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_cayip")
+metadata/_edit_lock_ = true
+
+[node name="Informacion" type="Label" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 738.0
+offset_right = 596.0
+offset_bottom = 963.0
+theme = ExtResource("1_cayip")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "This is a monsters  fighter and generator trought prompts. You can use an external AI or human effort to draw / write  the results. This don't use globally stored information or AI web services, so you could create your monsters locally and share it trought datafiles"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="BtnImportar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 973.0
+offset_right = 281.0
+offset_bottom = 1040.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_cayip")
+text = "Import All"
+metadata/_edit_lock_ = true
+
+[node name="BtnExportar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 972.0
+offset_right = 553.0
+offset_bottom = 1040.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_cayip")
+text = "Export All"
+metadata/_edit_lock_ = true
+
+[node name="Creditos" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 1047.0
+offset_right = 617.0
+offset_bottom = 1100.0
+theme = ExtResource("1_cayip")
+text = "by Omwekiatl 2025"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Portada/BtnPlay" to="." method="_on_btn_play_pressed"]
+[connection signal="pressed" from="BtnImportar" to="." method="_on_btn_importar_pressed"]
+[connection signal="pressed" from="BtnExportar" to="." method="_on_btn_exportar_pressed"]

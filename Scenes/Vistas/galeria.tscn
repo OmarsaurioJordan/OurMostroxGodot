@@ -1,0 +1,114 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8mobaxvi6oic"]
+
+[ext_resource type="Theme" uid="uid://63lmbp6v151r" path="res://Sprites/Config/theme.tres" id="1_jp1c8"]
+[ext_resource type="Texture2D" uid="uid://b244g0uibf8dn" path="res://Sprites/General/banner.png" id="2_1ppdn"]
+[ext_resource type="Script" uid="uid://cvcoankvx1vjh" path="res://Scripts/Vistas/galeria.gd" id="2_pjtv4"]
+
+[node name="Galeria" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jp1c8")
+script = ExtResource("2_pjtv4")
+metadata/_edit_lock_ = true
+
+[node name="Header" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -57.0
+offset_right = 621.0
+offset_bottom = 188.333
+texture = ExtResource("2_1ppdn")
+expand_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="Header"]
+layout_mode = 0
+offset_top = 168.0
+offset_right = 621.0
+offset_bottom = 246.0
+metadata/_edit_lock_ = true
+
+[node name="BtnMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 12.0
+offset_right = 76.0
+offset_bottom = 68.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_jp1c8")
+text = "<"
+metadata/_edit_lock_ = true
+
+[node name="BtnActivos" type="Button" parent="."]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 19.0
+offset_right = 601.0
+offset_bottom = 72.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_jp1c8")
+toggle_mode = true
+text = "All"
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 619.0
+offset_bottom = 109.0
+theme = ExtResource("1_jp1c8")
+theme_override_font_sizes/font_size = 50
+text = "Gallery"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 126.0
+offset_right = 609.0
+offset_bottom = 998.0
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Fichas" type="VBoxContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="BtnImportar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 1020.0
+offset_right = 289.0
+offset_bottom = 1087.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_jp1c8")
+text = "Import"
+metadata/_edit_lock_ = true
+
+[node name="BtnCrear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 1019.0
+offset_right = 561.0
+offset_bottom = 1087.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_jp1c8")
+text = "Create"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="BtnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="BtnActivos" to="." method="_on_btn_activos_pressed"]
+[connection signal="pressed" from="BtnImportar" to="." method="_on_btn_importar_pressed"]
+[connection signal="pressed" from="BtnCrear" to="." method="_on_btn_crear_pressed"]

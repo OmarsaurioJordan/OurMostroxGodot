@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://crops5qwsrusa"]
+
+[ext_resource type="PackedScene" uid="uid://dacn2ep32ifrp" path="res://Scenes/Vistas/menu.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://va2mrfi5sobw" path="res://Scripts/game.gd" id="1_v158k"]
+[ext_resource type="Script" uid="uid://swacrjda66e1" path="res://Scripts/Modelos/modelo.gd" id="2_h4fw4"]
+[ext_resource type="Script" uid="uid://i0le5tld7a1n" path="res://Scripts/Modelos/prompts.gd" id="2_ldgsr"]
+[ext_resource type="PackedScene" uid="uid://c8mobaxvi6oic" path="res://Scenes/Vistas/galeria.tscn" id="4_ldgsr"]
+[ext_resource type="PackedScene" uid="uid://ckgnj3i683eqw" path="res://Scenes/Vistas/nuevo.tscn" id="5_o5yvi"]
+[ext_resource type="PackedScene" uid="uid://b1fjpsfl5c417" path="res://Scenes/Vistas/monstruo.tscn" id="6_rku1e"]
+[ext_resource type="PackedScene" uid="uid://nwy30g8x7hqn" path="res://Scenes/Vistas/lucha.tscn" id="7_rfjv2"]
+[ext_resource type="PackedScene" uid="uid://dgwv6jwqqjsam" path="res://Scenes/Vistas/cita.tscn" id="8_1phco"]
+[ext_resource type="Theme" uid="uid://63lmbp6v151r" path="res://Sprites/Config/theme.tres" id="9_h4fw4"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_v158k")
+
+[node name="Prompts" type="Node" parent="."]
+script = ExtResource("2_ldgsr")
+
+[node name="Modelo" type="Node" parent="."]
+script = ExtResource("2_h4fw4")
+
+[node name="Menu" parent="." instance=ExtResource("1_ebmjs")]
+
+[node name="Galeria" parent="." instance=ExtResource("4_ldgsr")]
+
+[node name="Nuevo" parent="." instance=ExtResource("5_o5yvi")]
+
+[node name="Monstruo" parent="." instance=ExtResource("6_rku1e")]
+
+[node name="Lucha" parent="." instance=ExtResource("7_rfjv2")]
+
+[node name="Cita" parent="." instance=ExtResource("8_1phco")]
+
+[node name="Mensaje" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.392157)
+offset_right = 621.0
+offset_bottom = 1104.0
+theme = ExtResource("9_h4fw4")
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="Mensaje"]
+self_modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 403.0
+offset_right = 600.0
+offset_bottom = 562.0
+theme = ExtResource("9_h4fw4")
+theme_override_font_sizes/font_size = 100
+text = "msj"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="TimMsj" type="Timer" parent="Mensaje"]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Mensaje/TimMsj" to="." method="_on_tim_msj_timeout"]

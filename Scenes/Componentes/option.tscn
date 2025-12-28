@@ -1,0 +1,326 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn2echf0jl315"]
+
+[ext_resource type="Theme" uid="uid://63lmbp6v151r" path="res://Sprites/Config/theme.tres" id="1_tx2dh"]
+[ext_resource type="Script" uid="uid://diruotvl2ohmp" path="res://Scripts/Componentes/option.gd" id="2_56ya5"]
+[ext_resource type="Texture2D" uid="uid://cmnmkoqcvjtq" path="res://Sprites/Caracteristicas/0_0.png" id="2_hmytp"]
+
+[node name="Option" type="Label"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+offset_right = 554.0
+offset_bottom = 227.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_tx2dh")
+theme_override_font_sizes/font_size = 27
+text = ".
+.
+.
+.
+.
+.
+.
+."
+script = ExtResource("2_56ya5")
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 543.0
+offset_bottom = 46.0
+text = "Ítem"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 49.0
+offset_right = 467.0
+offset_bottom = 225.0
+mouse_filter = 2
+columns = 3
+metadata/_edit_lock_ = true
+
+[node name="Item1" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = ".................
+.
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnOpt" type="Button" parent="GridContainer/Item1"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 132.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_tx2dh")
+toggle_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item1"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 87.0
+mouse_filter = 2
+texture = ExtResource("2_hmytp")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="GridContainer/Item1"]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 129.0
+offset_bottom = 135.0
+theme = ExtResource("1_tx2dh")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 18
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Item2" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = ".................
+.
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnOpt" type="Button" parent="GridContainer/Item2"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 132.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_tx2dh")
+toggle_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item2"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 87.0
+mouse_filter = 2
+texture = ExtResource("2_hmytp")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="GridContainer/Item2"]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 129.0
+offset_bottom = 135.0
+theme = ExtResource("1_tx2dh")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 18
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Item3" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = ".................
+.
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnOpt" type="Button" parent="GridContainer/Item3"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 132.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_tx2dh")
+toggle_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item3"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 87.0
+mouse_filter = 2
+texture = ExtResource("2_hmytp")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="GridContainer/Item3"]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 129.0
+offset_bottom = 135.0
+theme = ExtResource("1_tx2dh")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 18
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Item4" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = ".................
+.
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnOpt" type="Button" parent="GridContainer/Item4"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 132.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_tx2dh")
+toggle_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item4"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 87.0
+mouse_filter = 2
+texture = ExtResource("2_hmytp")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="GridContainer/Item4"]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 129.0
+offset_bottom = 135.0
+theme = ExtResource("1_tx2dh")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 18
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Item5" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = ".................
+.
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnOpt" type="Button" parent="GridContainer/Item5"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 132.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_tx2dh")
+toggle_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item5"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 87.0
+mouse_filter = 2
+texture = ExtResource("2_hmytp")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="GridContainer/Item5"]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 129.0
+offset_bottom = 135.0
+theme = ExtResource("1_tx2dh")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 18
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Item6" type="Label" parent="GridContainer"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = ".................
+.
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnOpt" type="Button" parent="GridContainer/Item6"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 132.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_tx2dh")
+toggle_mode = true
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="GridContainer/Item6"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 87.0
+mouse_filter = 2
+texture = ExtResource("2_hmytp")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="GridContainer/Item6"]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 129.0
+offset_bottom = 135.0
+theme = ExtResource("1_tx2dh")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 18
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true

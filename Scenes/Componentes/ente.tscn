@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bystiv45806cw"]
+
+[ext_resource type="Script" uid="uid://dsqtuessac6ps" path="res://Scripts/Modelos/ente.gd" id="1_fmuuy"]
+
+[node name="Ente" type="Node"]
+script = ExtResource("1_fmuuy")

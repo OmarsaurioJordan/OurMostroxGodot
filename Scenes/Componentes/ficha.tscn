@@ -1,0 +1,123 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbqpbtowy47dw"]
+
+[ext_resource type="Theme" uid="uid://63lmbp6v151r" path="res://Sprites/Config/theme.tres" id="1_ng186"]
+[ext_resource type="Texture2D" uid="uid://bmxkvimhor7gv" path="res://Sprites/General/default_card.png" id="2_x7waf"]
+[ext_resource type="Script" uid="uid://cyte6u11c72wy" path="res://Scripts/Componentes/ficha.gd" id="2_xc6q3"]
+[ext_resource type="Texture2D" uid="uid://bmxhessk3b63h" path="res://Sprites/General/generos_strip4.png" id="3_xc6q3"]
+
+[node name="Ficha" type="Label"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+offset_right = 554.0
+offset_bottom = 273.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_ng186")
+theme_override_font_sizes/font_size = 30
+text = ".
+.
+.
+.
+.
+."
+script = ExtResource("2_xc6q3")
+metadata/_edit_lock_ = true
+
+[node name="BtnSeleccion" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 551.0
+offset_bottom = 261.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_ng186")
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 10.0
+offset_right = 173.0
+offset_bottom = 170.0
+mouse_filter = 2
+texture = ExtResource("2_x7waf")
+expand_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Activo" type="Label" parent="."]
+self_modulate = Color(0.85098, 0.2, 0.2, 0.627451)
+layout_mode = 0
+offset_left = 19.0
+offset_top = -23.0
+offset_right = 91.0
+offset_bottom = 118.0
+scale = Vector2(2, 2)
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 100
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Nombre" type="Label" parent="."]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 14.0
+offset_right = 541.0
+offset_bottom = 116.0
+text = "Nombre"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Nivel" type="Label" parent="."]
+self_modulate = Color(0.345098, 0.243137, 0.14902, 1)
+layout_mode = 0
+offset_left = 261.0
+offset_top = 133.0
+offset_right = 391.0
+offset_bottom = 190.0
+text = "LVL: 1"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Genero" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.537255)
+position = Vector2(222, 163)
+scale = Vector2(0.233425, 0.208029)
+texture = ExtResource("3_xc6q3")
+hframes = 4
+frame = 1
+metadata/_edit_lock_ = true
+
+[node name="Estadisticas" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 204.0
+offset_right = 541.0
+offset_bottom = 250.0
+mouse_filter = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Victorias" type="Label" parent="Estadisticas"]
+self_modulate = Color(0.938323, 0.932814, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0 v"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Derrotas" type="Label" parent="Estadisticas"]
+self_modulate = Color(0.594813, 0, 0.115912, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0 x"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Hijos" type="Label" parent="Estadisticas"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0 i"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true

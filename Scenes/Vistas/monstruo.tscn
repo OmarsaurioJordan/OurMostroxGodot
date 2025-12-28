@@ -1,0 +1,814 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1fjpsfl5c417"]
+
+[ext_resource type="Theme" uid="uid://63lmbp6v151r" path="res://Sprites/Config/theme.tres" id="1_h64bm"]
+[ext_resource type="Texture2D" uid="uid://b244g0uibf8dn" path="res://Sprites/General/banner.png" id="2_q01jd"]
+[ext_resource type="Script" uid="uid://c05wnav673bou" path="res://Scripts/Vistas/monstruo.gd" id="2_ufk4y"]
+[ext_resource type="PackedScene" uid="uid://demdfvdnxbf0c" path="res://Scenes/Componentes/informacion.tscn" id="3_ufk4y"]
+[ext_resource type="PackedScene" uid="uid://cbqpbtowy47dw" path="res://Scenes/Componentes/ficha.tscn" id="4_1j0cu"]
+[ext_resource type="Texture2D" uid="uid://dwwq3lx8x3yx5" path="res://Sprites/Terrenos/terreno0.png" id="5_qf0mw"]
+[ext_resource type="PackedScene" uid="uid://dtik1m3phjus7" path="res://Scenes/Componentes/caracteristicas.tscn" id="5_ufk4y"]
+[ext_resource type="Texture2D" uid="uid://bmxkvimhor7gv" path="res://Sprites/General/default_card.png" id="7_1j0cu"]
+
+[node name="Monstruo" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_h64bm")
+script = ExtResource("2_ufk4y")
+metadata/_edit_lock_ = true
+
+[node name="Header" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -57.0
+offset_right = 621.0
+offset_bottom = 188.333
+texture = ExtResource("2_q01jd")
+expand_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="Header"]
+layout_mode = 0
+offset_top = 168.0
+offset_right = 621.0
+offset_bottom = 246.0
+metadata/_edit_lock_ = true
+
+[node name="BtnMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 12.0
+offset_right = 76.0
+offset_bottom = 68.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+text = "<"
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 619.0
+offset_bottom = 109.0
+theme = ExtResource("1_h64bm")
+theme_override_font_sizes/font_size = 50
+text = "Monstruo"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnInfo" type="Button" parent="."]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 129.0
+offset_right = 581.0
+offset_bottom = 196.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+toggle_mode = true
+text = "Info"
+metadata/_edit_lock_ = true
+
+[node name="BtnLuchas" type="Button" parent="."]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 130.0
+offset_right = 393.0
+offset_bottom = 198.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+toggle_mode = true
+text = "Figths"
+metadata/_edit_lock_ = true
+
+[node name="BtnCitas" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 130.0
+offset_right = 180.0
+offset_bottom = 198.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+toggle_mode = true
+text = "Dates"
+metadata/_edit_lock_ = true
+
+[node name="SubInfo" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Scroll" type="ScrollContainer" parent="SubInfo"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 222.0
+offset_right = 609.0
+offset_bottom = 998.0
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Cosas" type="VBoxContainer" parent="SubInfo/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Informacion" parent="SubInfo/Scroll/Cosas" instance=ExtResource("3_ufk4y")]
+layout_mode = 2
+
+[node name="B1" type="Label" parent="SubInfo/Scroll/Cosas"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-------------------------------------"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Caract" type="Label" parent="SubInfo/Scroll/Cosas"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = ExtResource("1_h64bm")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "Characteristics:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Caracteristicas" parent="SubInfo/Scroll/Cosas" instance=ExtResource("5_ufk4y")]
+layout_mode = 2
+
+[node name="B2" type="Label" parent="SubInfo/Scroll/Cosas"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-------------------------------------"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Descrip" type="Label" parent="SubInfo/Scroll/Cosas"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = ExtResource("1_h64bm")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "Description:
+
+text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="B3" type="Label" parent="SubInfo/Scroll/Cosas"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-------------------------------------"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Huerfano" type="Label" parent="SubInfo/Scroll/Cosas"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = ExtResource("1_h64bm")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "Generated from the voidness..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Mother" type="Label" parent="SubInfo/Scroll/Cosas"]
+visible = false
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = ExtResource("1_h64bm")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "Mother
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="FichaMother" parent="SubInfo/Scroll/Cosas" instance=ExtResource("4_1j0cu")]
+visible = false
+layout_mode = 2
+
+[node name="Father" type="Label" parent="SubInfo/Scroll/Cosas"]
+visible = false
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = ExtResource("1_h64bm")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "Father
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="FichaFather" parent="SubInfo/Scroll/Cosas" instance=ExtResource("4_1j0cu")]
+visible = false
+layout_mode = 2
+
+[node name="B4" type="Label" parent="SubInfo/Scroll/Cosas"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-------------------------------------"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Instruc" type="Label" parent="SubInfo/Scroll/Cosas"]
+self_modulate = Color(1, 1, 1, 0.627451)
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = ExtResource("1_h64bm")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "Instructions:
+
+at first you will not see image or description, use the middle button to cpoy the prompt, paste it in any AI, then paste the result here with the set button, finally obtain image prompt to generate the illustration in any external AI, to put it here
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Config" type="Label" parent="SubInfo/Scroll/Cosas"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+size_flags_horizontal = 3
+text = ".
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnSetDesc" type="Button" parent="SubInfo/Scroll/Cosas/Config"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 167.0
+offset_bottom = 87.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+text = "Set
+Descript"
+metadata/_edit_lock_ = true
+
+[node name="BtnPrmDesc" type="Button" parent="SubInfo/Scroll/Cosas/Config"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = -2.0
+offset_right = 363.0
+offset_bottom = 84.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+text = "Descript
+Prompt"
+metadata/_edit_lock_ = true
+
+[node name="BtnPrmImg" type="Button" parent="SubInfo/Scroll/Cosas/Config"]
+layout_mode = 2
+offset_left = 399.0
+offset_top = -1.0
+offset_right = 565.0
+offset_bottom = 85.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+text = "Image
+Prompt"
+metadata/_edit_lock_ = true
+
+[node name="BtnActivo" type="Button" parent="SubInfo"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 1020.0
+offset_right = 289.0
+offset_bottom = 1087.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+text = "Kill"
+metadata/_edit_lock_ = true
+
+[node name="BtnExportar" type="Button" parent="SubInfo"]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 1019.0
+offset_right = 561.0
+offset_bottom = 1087.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+text = "Export"
+metadata/_edit_lock_ = true
+
+[node name="SubLuchas" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Scroll" type="ScrollContainer" parent="SubLuchas"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 222.0
+offset_right = 609.0
+offset_bottom = 998.0
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Luchas" type="VBoxContainer" parent="SubLuchas/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="BtnLuchar" type="Button" parent="SubLuchas"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 1017.0
+offset_right = 495.0
+offset_bottom = 1085.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+text = "New Fight"
+metadata/_edit_lock_ = true
+
+[node name="SubCitas" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Scroll" type="ScrollContainer" parent="SubCitas"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 222.0
+offset_right = 609.0
+offset_bottom = 998.0
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Citas" type="VBoxContainer" parent="SubCitas/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="BtnCita" type="Button" parent="SubCitas"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 1017.0
+offset_right = 495.0
+offset_bottom = 1085.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+text = "New Date"
+metadata/_edit_lock_ = true
+
+[node name="UnaLucha" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Scroll" type="ScrollContainer" parent="UnaLucha"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 220.0
+offset_right = 609.0
+offset_bottom = 998.0
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Textos" type="VBoxContainer" parent="UnaLucha/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="B1" type="Label" parent="UnaLucha/Scroll/Textos"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-------------------------------------"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Versus" type="Label" parent="UnaLucha/Scroll/Textos"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "
+
+
+
+
+
+
+
+
+"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="ImagenA" type="TextureRect" parent="UnaLucha/Scroll/Textos/Versus"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 3.0
+offset_right = 256.0
+offset_bottom = 341.0
+mouse_filter = 2
+texture = ExtResource("7_1j0cu")
+expand_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Nombre" type="Label" parent="UnaLucha/Scroll/Textos/Versus/ImagenA"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 337.0
+offset_right = 230.0
+offset_bottom = 459.0
+theme_override_font_sizes/font_size = 25
+text = "Nombre"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="ImagenB" type="TextureRect" parent="UnaLucha/Scroll/Textos/Versus"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 6.0
+offset_right = 539.0
+offset_bottom = 344.0
+mouse_filter = 2
+texture = ExtResource("7_1j0cu")
+expand_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Nombre" type="Label" parent="UnaLucha/Scroll/Textos/Versus/ImagenB"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 337.0
+offset_right = 234.0
+offset_bottom = 459.0
+theme_override_font_sizes/font_size = 25
+text = "Nombre"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="B2" type="Label" parent="UnaLucha/Scroll/Textos"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-------------------------------------"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Lugar" type="Label" parent="UnaLucha/Scroll/Textos"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = ExtResource("1_h64bm")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "Lugar: nombre"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="Label" parent="UnaLucha/Scroll/Textos"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = ExtResource("1_h64bm")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "
+
+
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="UnaLucha/Scroll/Textos/Imagen"]
+layout_mode = 2
+offset_left = 170.0
+offset_top = 9.0
+offset_right = 423.0
+offset_bottom = 189.0
+mouse_filter = 2
+texture = ExtResource("5_qf0mw")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="B3" type="Label" parent="UnaLucha/Scroll/Textos"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-------------------------------------"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Narracion" type="Label" parent="UnaLucha/Scroll/Textos"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = ExtResource("1_h64bm")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "Fight:
+
+text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="B4" type="Label" parent="UnaLucha/Scroll/Textos"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-------------------------------------"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Resultado" type="Label" parent="UnaLucha/Scroll/Textos"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = ExtResource("1_h64bm")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "Result:
+
+data"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="B5" type="Label" parent="UnaLucha/Scroll/Textos"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-------------------------------------"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Instruc" type="Label" parent="UnaLucha/Scroll/Textos"]
+self_modulate = Color(1, 1, 1, 0.627451)
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = ExtResource("1_h64bm")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "Instructions:
+
+at first you will not see the fight narration, you should obtain a prompt in the button below, paste it in an external AI and then, paste the result in the set button below
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Config" type="Label" parent="UnaLucha/Scroll/Textos"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+size_flags_horizontal = 3
+text = ".
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnSetFight" type="Button" parent="UnaLucha/Scroll/Textos/Config"]
+layout_mode = 2
+offset_left = 84.0
+offset_top = -1.0
+offset_right = 269.0
+offset_bottom = 85.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+text = "Set
+Result"
+metadata/_edit_lock_ = true
+
+[node name="BtnPrmFight" type="Button" parent="UnaLucha/Scroll/Textos/Config"]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 1.0
+offset_right = 517.0
+offset_bottom = 87.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+text = "Fight
+Prompt"
+metadata/_edit_lock_ = true
+
+[node name="BtnVolver" type="Button" parent="UnaLucha"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 1017.0
+offset_right = 495.0
+offset_bottom = 1085.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+text = "Go Back"
+metadata/_edit_lock_ = true
+
+[node name="UnaCita" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Nombre" type="Label" parent="UnaCita"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 223.0
+offset_right = 577.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 40
+text = "Nombre"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Scroll" type="ScrollContainer" parent="UnaCita"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 335.0
+offset_right = 609.0
+offset_bottom = 998.0
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Textos" type="VBoxContainer" parent="UnaCita/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="B1" type="Label" parent="UnaCita/Scroll/Textos"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-------------------------------------"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Narracion" type="Label" parent="UnaCita/Scroll/Textos"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = ExtResource("1_h64bm")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "Date:
+
+text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="B2" type="Label" parent="UnaCita/Scroll/Textos"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-------------------------------------"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Resultado" type="Label" parent="UnaCita/Scroll/Textos"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = ExtResource("1_h64bm")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "Result: ???
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Ficha" parent="UnaCita/Scroll/Textos" instance=ExtResource("4_1j0cu")]
+visible = false
+layout_mode = 2
+
+[node name="B3" type="Label" parent="UnaCita/Scroll/Textos"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-------------------------------------"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Instruc" type="Label" parent="UnaCita/Scroll/Textos"]
+self_modulate = Color(1, 1, 1, 0.627451)
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = ExtResource("1_h64bm")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "Instructions:
+
+at first you will not see the date narration, you should obtain a prompt in the button below, paste it in an external AI and then, paste the result in the set button below
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Config" type="Label" parent="UnaCita/Scroll/Textos"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+layout_mode = 2
+size_flags_horizontal = 3
+text = ".
+."
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnSetDate" type="Button" parent="UnaCita/Scroll/Textos/Config"]
+layout_mode = 2
+offset_left = 84.0
+offset_top = -1.0
+offset_right = 269.0
+offset_bottom = 85.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+text = "Set
+Result"
+metadata/_edit_lock_ = true
+
+[node name="BtnPrmDate" type="Button" parent="UnaCita/Scroll/Textos/Config"]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 1.0
+offset_right = 517.0
+offset_bottom = 87.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+text = "Fight
+Prompt"
+metadata/_edit_lock_ = true
+
+[node name="BtnVolver" type="Button" parent="UnaCita"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 1017.0
+offset_right = 495.0
+offset_bottom = 1085.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h64bm")
+text = "Go Back"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="BtnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="BtnInfo" to="." method="_on_btn_info_pressed"]
+[connection signal="pressed" from="BtnLuchas" to="." method="_on_btn_luchas_pressed"]
+[connection signal="pressed" from="BtnCitas" to="." method="_on_btn_citas_pressed"]
+[connection signal="pressed" from="SubInfo/Scroll/Cosas/Config/BtnSetDesc" to="." method="_on_btn_set_desc_pressed"]
+[connection signal="pressed" from="SubInfo/Scroll/Cosas/Config/BtnPrmDesc" to="." method="_on_btn_prm_desc_pressed"]
+[connection signal="pressed" from="SubInfo/Scroll/Cosas/Config/BtnPrmImg" to="." method="_on_btn_prm_img_pressed"]
+[connection signal="pressed" from="SubInfo/BtnActivo" to="." method="_on_btn_activo_pressed"]
+[connection signal="pressed" from="SubInfo/BtnExportar" to="." method="_on_btn_exportar_pressed"]
+[connection signal="pressed" from="SubLuchas/BtnLuchar" to="." method="_on_btn_luchar_pressed"]
+[connection signal="pressed" from="SubCitas/BtnCita" to="." method="_on_btn_cita_pressed"]
+[connection signal="pressed" from="UnaLucha/Scroll/Textos/Config/BtnSetFight" to="." method="_on_btn_set_fight_pressed"]
+[connection signal="pressed" from="UnaLucha/Scroll/Textos/Config/BtnPrmFight" to="." method="_on_btn_prm_fight_pressed"]
+[connection signal="pressed" from="UnaLucha/BtnVolver" to="." method="_on_btn_volver_pressed"]

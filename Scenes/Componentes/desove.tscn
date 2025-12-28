@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl6uash3f4fnp"]
+
+[ext_resource type="Theme" uid="uid://63lmbp6v151r" path="res://Sprites/Config/theme.tres" id="1_tmlin"]
+[ext_resource type="Texture2D" uid="uid://bmxkvimhor7gv" path="res://Sprites/General/default_card.png" id="2_f3d5i"]
+
+[node name="Desove" type="Label"]
+self_modulate = Color(1, 1, 1, 0.00392157)
+offset_right = 554.0
+offset_bottom = 165.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_tmlin")
+theme_override_font_sizes/font_size = 25
+text = ".
+.
+.
+.
+.
+.
+.
+.
+.
+."
+metadata/_edit_lock_ = true
+
+[node name="BtnSeleccion" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 551.0
+offset_bottom = 373.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_tmlin")
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 10.0
+offset_right = 173.0
+offset_bottom = 170.0
+mouse_filter = 2
+texture = ExtResource("2_f3d5i")
+expand_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Nombre" type="Label" parent="."]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 14.0
+offset_right = 541.0
+offset_bottom = 116.0
+text = "Nombre"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Resultado" type="Label" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 137.0
+offset_right = 350.0
+offset_bottom = 226.0
+text = "Result:
+???"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Hijo" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Imagen" type="TextureRect" parent="Hijo"]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 125.0
+offset_right = 537.0
+offset_bottom = 365.0
+mouse_filter = 2
+texture = ExtResource("2_f3d5i")
+expand_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Nombre" type="Label" parent="Hijo"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 258.0
+offset_right = 370.0
+offset_bottom = 360.0
+text = "Nombre"
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
