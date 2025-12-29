@@ -14,7 +14,7 @@ Lo mejor es que el usuario es libre de lección, bien podría pasar el prompt a 
 
 Como desarrollador de videojuegos, hago este producto a modo experimental, mi marca se centra en un estilo propio dibujado a mano y respaldado por años programando cuando no existía la IA, no avalo el uso de dicha tecnología generativa en el mundo creativo, pues suplanta la creatividad, talento y expresión innatas, a la vez que promueve la pereza y la cultura de la inmediatéz. Este es un caso excepcional a mi portafolio, cuyo propósito es enrriquecer al mismo, mostrando la capacidad de acople a una tecnología nueva, usándola en un gameplay que aprovecha su naturaleza.
 
-puede probarlo en: 
+puede probarlo en: https://omwekiatl.itch.io/ourmostrox
 
 Licencia:
 puede hacer lo que quiera con este software siempre que de créditos y No sea con propósitos comerciales.
