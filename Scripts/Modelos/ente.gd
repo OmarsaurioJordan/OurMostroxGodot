@@ -87,7 +87,7 @@ func get_cita_ind(ind: int = -1) -> Array:
 	return citas[ind]
 
 func is_huerfano() -> bool:
-	return id_madre == "" or id_padre == ""
+	return id_madre == "" and id_padre == ""
 
 func set_imagen(img: String) -> void:
 	imagen = img
@@ -196,11 +196,9 @@ func get_cita(idpar: String) -> int:
 	return -1
 
 func get_cita_uno(idpar: String) -> Array:
-	var i = 0
 	for ci in citas:
 		if ci[CITA.ID_PAR] == idpar:
 			return ci
-		i += 1
 	return []
 
 func get_num_opovictorias() -> Array:
@@ -209,15 +207,15 @@ func get_num_opovictorias() -> Array:
 	for lu in luchas:
 		if lu[LUCHA.NARRACION] != "":
 			if lu[LUCHA.ID_OP] == "":
-				if not str(lu[LUCHA.LUGAR]) in opo:
-					opo.append(str(lu[LUCHA.LUGAR]))
+				if not str(int(lu[LUCHA.LUGAR])) in opo:
+					opo.append(str(int(lu[LUCHA.LUGAR])))
 			elif not lu[LUCHA.ID_OP] in opo:
 				opo.append(lu[LUCHA.ID_OP])
 	for op in opo:
 		for lu in luchas:
 			if lu[LUCHA.NARRACION] != "":
 				if lu[LUCHA.ID_OP] == "":
-					if str(lu[LUCHA.LUGAR]) == op:
+					if str(int(lu[LUCHA.LUGAR])) == op:
 						if lu[LUCHA.VICTORIA]:
 							vic += 1
 							break
@@ -250,3 +248,11 @@ func change_activo() -> void:
 
 func get_ready() -> bool:
 	return activo and descripcion != ""
+
+func is_family(ide: String) -> bool:
+	if id_madre == ide or id_padre == ide:
+		return true
+	for ci in citas:
+		if ci[CITA.ID_HIJO] == ide:
+			return true
+	return false

@@ -21,21 +21,28 @@ script = ExtResource("2_ldgsr")
 [node name="Modelo" type="Node" parent="."]
 script = ExtResource("2_h4fw4")
 
+[node name="Config" parent="." instance=ExtResource("11_o5yvi")]
+visible = false
+
 [node name="Menu" parent="." instance=ExtResource("1_ebmjs")]
 
 [node name="Galeria" parent="." instance=ExtResource("4_ldgsr")]
+visible = false
 
 [node name="Nuevo" parent="." instance=ExtResource("5_o5yvi")]
+visible = false
 
 [node name="Monstruo" parent="." instance=ExtResource("6_rku1e")]
+visible = false
 
 [node name="Lucha" parent="." instance=ExtResource("7_rfjv2")]
+visible = false
 
 [node name="Cita" parent="." instance=ExtResource("8_1phco")]
-
-[node name="Config" parent="." instance=ExtResource("11_o5yvi")]
+visible = false
 
 [node name="Mensaje" type="Panel" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0.392157)
 offset_right = 621.0
 offset_bottom = 1104.0

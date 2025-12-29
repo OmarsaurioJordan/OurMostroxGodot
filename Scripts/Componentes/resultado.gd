@@ -59,7 +59,7 @@ func actualize(raiz: Node) -> void:
 			fichas[i].text += ": ???"
 		else:
 			res = res.split("\n")
-			fichas[i].text += ": " + res[1].split(": ")[1] + " - " + res[2].split(": ")[1]
+			fichas[i].text += ": " + res[5].split(": ")[1]
 			tot[0] += 1.0 if lu[ente.LUCHA.VICTORIA] else 0.0
 			tot[1] += 1.0
 		i += 1

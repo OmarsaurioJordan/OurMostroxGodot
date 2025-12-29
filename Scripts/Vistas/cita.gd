@@ -61,13 +61,13 @@ func _on_btn_cita_pressed() -> void:
 		"ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789 ").strip_edges()
 	var nombre2 = raiz.filtro_str($LinNombre2.text,"ÁÉÍÓÚáéíóú" +
 		"ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789 ").strip_edges()
-	if nombre1 == "" or nombre2 == "":
-		raiz.set_mensaje("No Name!!!")
-		return
 	var ente = raiz.get_actual_ente()
 	var id_op = parejas[pareja_act]
 	var ind = ente.get_cita(id_op)
 	if ind == -1:
+		if nombre1 == "" or nombre2 == "":
+			raiz.set_mensaje("No Name!!!")
+			return
 		var nombre_op = "*** Human ***"
 		var prompt = raiz.modelo.get_prompt_cita(null, 0 if ente.genero == 1 else 1)
 		var gen = 0 if randf() < 0.5 else 1

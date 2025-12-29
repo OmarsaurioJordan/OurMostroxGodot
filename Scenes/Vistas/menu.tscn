@@ -109,6 +109,7 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="BtnConfig" type="Button" parent="."]
+layout_mode = 0
 offset_left = 29.0
 offset_top = 255.0
 offset_right = 76.0

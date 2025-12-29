@@ -36,6 +36,7 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="BtnMenu" type="Button" parent="."]
+layout_mode = 0
 offset_left = 17.0
 offset_top = 12.0
 offset_right = 76.0
@@ -51,24 +52,38 @@ layout_mode = 0
 offset_left = 30.0
 offset_top = 244.0
 offset_right = 596.0
-offset_bottom = 915.0
+offset_bottom = 714.0
 theme = ExtResource("1_hougu")
 theme_override_constants/line_spacing = -5
 theme_override_font_sizes/font_size = 25
 text = "Information:
 
-Our Mostrox Godot v1, is an interactive software to generate prompts, to let AIs to create: images and narratives, this software was made with the help of AIs, but beyond that, it exists because the existence of AIs, so its design is focused on the generative AIs nature and capabilityes, mainly the multi-variable case analysis. Even so, you as an human can do the task too, only take the programmatically generated prompt to draw and write for yourself, and in that way, compete and prove your worth. This is an experimental software
+Our Mostrox Godot v1, is an interactive software to generate prompts, to let AIs to create: images and narratives, this software was made with the help of AIs, but beyond that, it exists because the existence of AIs, so its design is focused on the generative AIs nature and capabilityes, mainly the multi-variable case analysis. Even so, you as an human can do the task too, only take the programmatically generated prompt to draw and write for yourself, and in that way, compete and prove your worth. This is an experimental software"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
 
+[node name="Delete" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 0
+offset_left = 30.0
+offset_top = 727.0
+offset_right = 596.0
+offset_bottom = 955.0
+theme = ExtResource("1_hougu")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "Monster Elimination:
 
-Monster Elimination:
-
-you can type \"iwanttodestroyyou\" in a monster main window, to delete it permanently"
+you can type \"$$$\" in a monster main window, to delete it permanently, or type \"$$$$\" in main menu to destroy ALL permanently"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_lock_ = true
 
 [node name="BtnIdioma" type="Button" parent="."]
+layout_mode = 0
 offset_left = 132.0
 offset_top = 968.0
 offset_right = 501.0

@@ -241,6 +241,8 @@ theme_override_font_sizes/font_size = 25
 text = "Instructions:
 
 at first you will not see image or description, use the middle button to cpoy the prompt, paste it in any AI, then paste the result here with the set button, finally obtain image prompt to generate the illustration in any external AI, to put it here
+
+you can Drag a TXT here to Set
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -357,6 +359,7 @@ text = "New Fight"
 metadata/_edit_lock_ = true
 
 [node name="SubCitas" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -404,7 +407,7 @@ layout_mode = 0
 offset_left = 16.0
 offset_top = 220.0
 offset_right = 609.0
-offset_bottom = 998.0
+offset_bottom = 1079.0
 follow_focus = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
@@ -593,6 +596,8 @@ theme_override_font_sizes/font_size = 25
 text = "Instructions:
 
 at first you will not see the fight narration, you should obtain a prompt in the button below, paste it in an external AI and then, paste the result in the set button below
+
+you can Drag a TXT here to Set
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -634,18 +639,6 @@ text = "Fight
 Prompt"
 metadata/_edit_lock_ = true
 
-[node name="BtnVolver" type="Button" parent="UnaLucha"]
-layout_mode = 0
-offset_left = 155.0
-offset_top = 1017.0
-offset_right = 495.0
-offset_bottom = 1085.0
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme = ExtResource("1_h64bm")
-text = "Go Back"
-metadata/_edit_lock_ = true
-
 [node name="UnaCita" type="Control" parent="."]
 visible = false
 anchors_preset = 0
@@ -658,7 +651,7 @@ layout_mode = 0
 offset_left = 16.0
 offset_top = 219.0
 offset_right = 609.0
-offset_bottom = 998.0
+offset_bottom = 1082.0
 follow_focus = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
@@ -802,6 +795,8 @@ theme_override_font_sizes/font_size = 25
 text = "Instructions:
 
 at first you will not see the date narration, you should obtain a prompt in the button below, paste it in an external AI and then, paste the result in the set button below
+
+you can Drag a TXT here to Set
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -843,18 +838,6 @@ text = "Date
 Prompt"
 metadata/_edit_lock_ = true
 
-[node name="BtnVolverC" type="Button" parent="UnaCita"]
-layout_mode = 0
-offset_left = 155.0
-offset_top = 1017.0
-offset_right = 495.0
-offset_bottom = 1085.0
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme = ExtResource("1_h64bm")
-text = "Go Back"
-metadata/_edit_lock_ = true
-
 [connection signal="pressed" from="BtnMenu" to="." method="_on_btn_menu_pressed"]
 [connection signal="pressed" from="BtnInfo" to="." method="_on_btn_info_pressed"]
 [connection signal="pressed" from="BtnLuchas" to="." method="_on_btn_luchas_pressed"]
@@ -868,7 +851,5 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="SubCitas/BtnCita" to="." method="_on_btn_cita_pressed"]
 [connection signal="pressed" from="UnaLucha/Scroll/Textos/Config/BtnSetFight" to="." method="_on_btn_set_fight_pressed"]
 [connection signal="pressed" from="UnaLucha/Scroll/Textos/Config/BtnPrmFight" to="." method="_on_btn_prm_fight_pressed"]
-[connection signal="pressed" from="UnaLucha/BtnVolver" to="." method="_on_btn_volver_pressed"]
 [connection signal="pressed" from="UnaCita/Scroll/Textos/Config/BtnSetDate" to="." method="_on_btn_set_date_pressed"]
 [connection signal="pressed" from="UnaCita/Scroll/Textos/Config/BtnPrmDate" to="." method="_on_btn_prm_date_pressed"]
-[connection signal="pressed" from="UnaCita/BtnVolverC" to="." method="_on_btn_volver_c_pressed"]

@@ -66,3 +66,6 @@ func actualize(raiz: Node) -> void:
 		text = ".\n.\n.\n.\n.\n.\n.\n.\n.\n."
 	else:
 		text = ".\n.\n.\n.\n.\n.\n."
+	for connection in $BtnSeleccion.pressed.get_connections():
+		$BtnSeleccion.pressed.disconnect(connection.callable)
+	$BtnSeleccion.pressed.connect(_on_button_seleccion.bind(ente.get_cita(oponente_id)))

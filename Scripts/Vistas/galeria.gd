@@ -38,8 +38,9 @@ func _on_btn_crear_pressed() -> void:
 func _on_btn_activos_pressed() -> void:
 	call_deferred("cambio")
 
-func _on_btn_importar_pressed() -> void:
-	var txt = DisplayServer.clipboard_get()
+func _on_btn_importar_pressed(txt="") -> void:
+	if txt == "":
+		txt = DisplayServer.clipboard_get()
 	if txt == "":
 		raiz.set_mensaje("No Data In\nClipboard!!!")
 		return
@@ -67,3 +68,7 @@ func destruir(id: String) -> void:
 	for fi in $Scroll/Fichas.get_children():
 		if fi.get_id() == id:
 			fi.queue_free()
+
+func delete_all() -> void:
+	for fi in $Scroll/Fichas.get_children():
+		fi.queue_free()

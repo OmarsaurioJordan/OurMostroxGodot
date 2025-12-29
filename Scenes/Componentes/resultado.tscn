@@ -94,7 +94,8 @@ metadata/_edit_lock_ = true
 [node name="Lug0" type="Label" parent="Lugares"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Zone1: 80% - 30%"
+text = "Zone1: 100%"
+horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -113,7 +114,8 @@ metadata/_edit_lock_ = true
 [node name="Lug1" type="Label" parent="Lugares"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Zone1: 80% - 30%"
+text = "Zone1: 100%"
+horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -132,7 +134,8 @@ metadata/_edit_lock_ = true
 [node name="Lug2" type="Label" parent="Lugares"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Zone1: 80% - 30%"
+text = "Zone1: 100%"
+horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -151,7 +154,8 @@ metadata/_edit_lock_ = true
 [node name="Lug3" type="Label" parent="Lugares"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Zone1: 80% - 30%"
+text = "Zone1: 100%"
+horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -170,7 +174,8 @@ metadata/_edit_lock_ = true
 [node name="Lug4" type="Label" parent="Lugares"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Zone1: 80% - 30%"
+text = "Zone1: 100%"
+horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -189,7 +194,8 @@ metadata/_edit_lock_ = true
 [node name="Lug5" type="Label" parent="Lugares"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Zone1: 80% - 30%"
+text = "Zone1: 100%"
+horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -208,7 +214,8 @@ metadata/_edit_lock_ = true
 [node name="Lug6" type="Label" parent="Lugares"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Zone1: 80% - 30%"
+text = "Zone1: 100%"
+horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -227,7 +234,8 @@ metadata/_edit_lock_ = true
 [node name="Lug7" type="Label" parent="Lugares"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Zone1: 80% - 30%"
+text = "Zone1: 100%"
+horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -246,7 +254,8 @@ metadata/_edit_lock_ = true
 [node name="Lug8" type="Label" parent="Lugares"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Zone1: 80% - 30%"
+text = "Zone1: 100%"
+horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -265,7 +274,8 @@ metadata/_edit_lock_ = true
 [node name="Lug9" type="Label" parent="Lugares"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Zone1: 80% - 30%"
+text = "Zone1: 100%"
+horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 

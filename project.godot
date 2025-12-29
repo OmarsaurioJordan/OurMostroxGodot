@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="OurMostrox"
+config/description="creator of monsters with AI prompt generator"
+config/version="1.0.0"
 run/main_scene="uid://crops5qwsrusa"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/show_image=false
+config/icon="uid://b07qby2qvqx6k"
+config/windows_native_icon="res://Sprites/General/icono.ico"
 
 [display]
 
@@ -22,8 +26,10 @@ window/size/viewport_height=1104
 window/size/window_width_override=414
 window/size/window_height_override=736
 window/stretch/mode="viewport"
+window/handheld/orientation=1
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

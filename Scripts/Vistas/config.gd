@@ -5,6 +5,7 @@ extends Panel
 func cambio() -> void:
 	visible = true
 	$BtnIdioma.text = "Prompts Languaje: " + raiz.modelo.idioma.to_upper()
+	$Delete.text = $Delete.text.replace("$$$$", raiz.CLAVE_MORTAL).replace("$$$", raiz.CLAVE_MON)
 
 func _on_btn_menu_pressed() -> void:
 	raiz.cambio("menu")

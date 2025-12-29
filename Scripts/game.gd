@@ -1,6 +1,7 @@
 extends Node
 
-const CLAVE_SECRETA = "iwanttodestroyyou"
+const CLAVE_MON = "iwantdestroyyou"
+const CLAVE_MORTAL = "iwantdestroyall"
 
 @onready var modelo = $Modelo
 
@@ -20,9 +21,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		# para evitar que ingresencaracteres especiales
 		if event.unicode != 0:
 			clave_secreta += char_pulsado
-			if clave_secreta.length() > CLAVE_SECRETA.length():
+			if clave_secreta.length() > CLAVE_MON.length():
 				clave_secreta = clave_secreta.right(-1)
-			if clave_secreta.to_lower() == CLAVE_SECRETA.to_lower():
+			if clave_secreta.to_lower() == CLAVE_MON.to_lower():
 				if $Monstruo.is_modo_receive_imagen():
 					var ente_id = get_actual_ente().get_id()
 					$Modelo.destruir(ente_id)
@@ -30,24 +31,46 @@ func _unhandled_input(event: InputEvent) -> void:
 					cambio("galeria")
 					set_mensaje("Destroyed!!!")
 					call_deferred("save_all")
-				clave_secreta = ""
+					clave_secreta = ""
+			if clave_secreta.to_lower() == CLAVE_MORTAL.to_lower():
+				if $Menu.visible:
+					$Modelo.delete_all()
+					$Galeria.delete_all()
+					set_mensaje("Destroyed!!!")
+					call_deferred("save_all")
+					clave_secreta = ""
 		else:
 			clave_secreta = ""
 
 func _on_files_dropped(files: PackedStringArray) -> void:
-	var path = files[0]
-	var image = Image.load_from_file(path)
-	image.resize(512, 768, Image.INTERPOLATE_LANCZOS)
-	if $Monstruo.is_modo_receive_imagen():
-		var ente = get_actual_ente()
-		if ente != null:
-			if ente.imagen == "":
-				var txt_img = image_to_base64(image)
-				ente.set_imagen(txt_img)
-				$Monstruo.cambio("monstruo")
-				save_all()
-			else:
-				set_mensaje("Full Image!!!")
+	for file in files:
+		try_open_file(file)
+
+func try_open_file(path: String) -> void:
+	var ext = path.get_extension().to_lower()
+	if ext == "txt":
+		var archivo = FileAccess.open(path, FileAccess.READ)
+		var txt = archivo.get_as_text()
+		archivo.close()
+		if $Monstruo.visible:
+			$Monstruo.set_txt_data(txt)
+		elif $Galeria.visible:
+			$Galeria._on_btn_importar_pressed(txt)
+		elif $Menu.visible:
+			$Menu._on_btn_importar_pressed(txt)
+	elif ext in ["png", "jpg", "jpeg", "webp", "bmp"]:
+		var image = Image.load_from_file(path)
+		image.resize(512, 768, Image.INTERPOLATE_LANCZOS)
+		if $Monstruo.is_modo_receive_imagen():
+			var ente = get_actual_ente()
+			if ente != null:
+				if ente.imagen == "":
+					var txt_img = image_to_base64(image)
+					ente.set_imagen(txt_img)
+					$Monstruo.cambio("monstruo")
+					save_all()
+				else:
+					set_mensaje("Full Image!!!")
 
 func image_to_base64(img: Image) -> String:
 	var buffer = img.save_webp_to_buffer()
@@ -58,6 +81,24 @@ func base64_to_image(base64_img: String) -> ImageTexture:
 	var img = Image.new()
 	img.load_webp_from_buffer(buffer)
 	return ImageTexture.create_from_image(img)
+
+func descargar_archivo_web(data: String, filename: String):
+	if OS.get_name() == "Web":
+		JavaScriptBridge.eval("""
+			(function() {
+				var texto = %s;
+				var blob = new Blob([texto], {type: 'text/plain'});
+				var url = window.URL.createObjectURL(blob);
+				var element = document.createElement('a');
+				element.setAttribute('href', url);
+				element.setAttribute('download', '%s');
+				element.style.display = 'none';
+				document.body.appendChild(element);
+				element.click();
+				document.body.removeChild(element);
+				window.URL.revokeObjectURL(url);
+			})();
+		""" % [JSON.stringify(data), filename])
 
 func cambio(ventana: String, ind: int = -1) -> void:
 	$Menu.visible = false
@@ -85,7 +126,12 @@ func cambio(ventana: String, ind: int = -1) -> void:
 			$Monstruo.cambio(ventana, ind)
 
 func set_enmira(id: String) -> void:
-	enmira.append(id)
+	var ind = enmira.find(id)
+	if ind == -1:
+		enmira.append(id)
+	else:
+		for i in range(enmira.size() - 1, ind, -1):
+			enmira.remove_at(i)
 	cambio("monstruo")
 
 func retrocede_enmira() -> bool:

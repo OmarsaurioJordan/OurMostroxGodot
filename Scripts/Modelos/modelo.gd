@@ -482,11 +482,12 @@ func get_prompt_cita_ente(id_a: String, cita: String) -> String:
 	var desc = ente.nombre + ": " + ente.descripcion
 	return prompt.replace("$A", desc).replace("$B", cita)
 
-func create(nombre: String, genero: int, param: Array) -> String:
+func create(nombre: String, genero: int, param: Array,
+		idma="", nombrema="", idpa="", nombrepa="") -> String:
 	var ente = ENTE.instantiate()
 	add_child(ente)
 	var prompt = get_prompt_desc(nombre, genero, param)
-	ente.initialize(nombre, genero, param, prompt)
+	ente.initialize(nombre, genero, param, prompt, idma, nombrema, idpa, nombrepa)
 	return ente.get_id()
 
 func load_ente(data: Dictionary) -> String:
@@ -527,7 +528,7 @@ func get_parejas(id_exeption: String) -> Array:
 	for ent in get_children():
 		if ent.get_id() == id_exeption:
 			res.append("")
-		elif ent.get_ready() and ent.genero != genero:
+		elif ent.get_ready() and ent.genero != genero and not ent.is_family(id_exeption):
 			res.append(ent.get_id())
 	res.shuffle()
 	return res
@@ -536,3 +537,7 @@ func destruir(id: String) -> void:
 	for ent in get_children():
 		if ent.get_id() == id:
 			ent.free()
+
+func delete_all() -> void:
+	for ent in get_children():
+		ent.free()
