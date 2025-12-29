@@ -90,7 +90,7 @@ autowrap_mode = 3
 metadata/_edit_lock_ = true
 
 [node name="Nivel" type="Label" parent="Monstruo1"]
-self_modulate = Color(0.345098, 0.243137, 0.14902, 1)
+self_modulate = Color(0.54902, 0.4, 0.262745, 1)
 layout_mode = 0
 offset_left = 36.0
 offset_top = 368.0
@@ -136,7 +136,7 @@ autowrap_mode = 3
 metadata/_edit_lock_ = true
 
 [node name="Nivel" type="Label" parent="Monstruo2"]
-self_modulate = Color(0.345098, 0.243137, 0.14902, 1)
+self_modulate = Color(0.54902, 0.4, 0.262745, 1)
 layout_mode = 0
 offset_left = 36.0
 offset_top = 368.0
@@ -267,3 +267,8 @@ text = "Date"
 metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="BtnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="BtnLeft" to="." method="_on_btn_left_pressed"]
+[connection signal="pressed" from="BtnRight" to="." method="_on_btn_right_pressed"]
+[connection signal="pressed" from="BtnNombre1" to="." method="_on_btn_nombre_1_pressed"]
+[connection signal="pressed" from="BtnNombre2" to="." method="_on_btn_nombre_2_pressed"]
+[connection signal="pressed" from="BtnCita" to="." method="_on_btn_cita_pressed"]

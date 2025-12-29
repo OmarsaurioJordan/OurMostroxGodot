@@ -5,7 +5,7 @@ enum LUCHA {
 }
 
 enum CITA {
-	ID_PAR, NOMBRE_PAR, ID_HIJO, NOMBRE_HIJO, PROMPT, NARRACION, CON_HIJO
+	ID_PAR, NOMBRE_PAR, ID_HIJO, NOMBRE_HIJO, PROMPT, NARRACION, ADN_PAR, GENERO
 }
 
 var id: String = ""
@@ -60,15 +60,18 @@ func new_lucha(idop: String, nombreop: String, lugar: int, prompt: String) -> in
 	luchas[i][LUCHA.PROMPT] = prompt
 	return i
 
-func new_cita(idpar: String, nombrepar: String, prompt: String, namehijos="fem|masc") -> int:
+func new_cita(idpar: String, nombrepar: String, prompt: String,
+		namehijo: String, gen: int, adn=[]) -> int:
 	var i = get_cita(idpar)
 	if i == -1:
-		var data = [idpar, nombrepar, "", namehijos, prompt, "", false]
+		var data = [idpar, nombrepar, "", namehijo, prompt, "", adn, gen]
 		citas.append(data)
 		return citas.size() - 1
 	citas[i][CITA.NOMBRE_PAR] = nombrepar
-	citas[i][CITA.NOMBRE_HIJO] = namehijos
+	citas[i][CITA.NOMBRE_HIJO] = namehijo
 	citas[i][CITA.PROMPT] = prompt
+	citas[i][CITA.ADN_PAR] = adn
+	citas[i][CITA.GENERO] = gen
 	return i
 
 func get_id() -> String:
@@ -79,6 +82,9 @@ func get_params() -> Array:
 
 func get_lucha_ind(ind: int = -1) -> Array:
 	return luchas[ind]
+
+func get_cita_ind(ind: int = -1) -> Array:
+	return citas[ind]
 
 func is_huerfano() -> bool:
 	return id_madre == "" or id_padre == ""
@@ -147,7 +153,6 @@ func set_data(data: Dictionary) -> void:
 			citas[i][CITA.NARRACION] = cida[CITA.NARRACION]
 			citas[i][CITA.ID_HIJO] = cida[CITA.ID_HIJO]
 			citas[i][CITA.NOMBRE_HIJO] = cida[CITA.NOMBRE_HIJO]
-			citas[i][CITA.CON_HIJO] = cida[CITA.CON_HIJO]
 
 func save_txt() -> String:
 	var data = get_data()
@@ -175,6 +180,13 @@ func get_luchas_oponentes() -> Array:
 			ops.append(lu[LUCHA.ID_OP])
 	return ops
 
+func get_citas_oponentes() -> Array:
+	var ops = []
+	for ci in citas:
+		if not ci[CITA.ID_PAR] in ops:
+			ops.append(ci[CITA.ID_PAR])
+	return ops
+
 func get_cita(idpar: String) -> int:
 	var i = 0
 	for ci in citas:
@@ -183,17 +195,33 @@ func get_cita(idpar: String) -> int:
 		i += 1
 	return -1
 
+func get_cita_uno(idpar: String) -> Array:
+	var i = 0
+	for ci in citas:
+		if ci[CITA.ID_PAR] == idpar:
+			return ci
+		i += 1
+	return []
+
 func get_num_opovictorias() -> Array:
 	var opo = []
 	var vic = 0
 	for lu in luchas:
 		if lu[LUCHA.NARRACION] != "":
-			if not lu[LUCHA.ID_OP] in opo:
+			if lu[LUCHA.ID_OP] == "":
+				if not str(lu[LUCHA.LUGAR]) in opo:
+					opo.append(str(lu[LUCHA.LUGAR]))
+			elif not lu[LUCHA.ID_OP] in opo:
 				opo.append(lu[LUCHA.ID_OP])
 	for op in opo:
 		for lu in luchas:
 			if lu[LUCHA.NARRACION] != "":
-				if lu[LUCHA.ID_OP] == op:
+				if lu[LUCHA.ID_OP] == "":
+					if str(lu[LUCHA.LUGAR]) == op:
+						if lu[LUCHA.VICTORIA]:
+							vic += 1
+							break
+				elif lu[LUCHA.ID_OP] == op:
 					if lu[LUCHA.VICTORIA]:
 						vic += 1
 						break
@@ -213,9 +241,8 @@ func get_num_luchas() -> Array:
 func get_num_hijos() -> int:
 	var tot = 0
 	for ci in citas:
-		if ci[CITA.NARRACION] != "":
-			if ci[CITA.CON_HIJO]:
-				tot += 1
+		if ci[CITA.ID_HIJO] != "":
+			tot += 1
 	return tot
 
 func change_activo() -> void:

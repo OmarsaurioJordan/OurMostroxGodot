@@ -62,3 +62,8 @@ func _on_btn_importar_pressed() -> void:
 				cambio()
 				return
 	raiz.set_mensaje("Bad Data!!!")
+
+func destruir(id: String) -> void:
+	for fi in $Scroll/Fichas.get_children():
+		if fi.get_id() == id:
+			fi.queue_free()

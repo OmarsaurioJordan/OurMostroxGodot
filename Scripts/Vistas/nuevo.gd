@@ -33,7 +33,7 @@ func _on_btn_nombre_pressed() -> void:
 	$LinNombre.text = raiz.modelo.get_random_name(fem, masc)
 
 func _on_btn_crear_pressed() -> void:
-	var nombre = filtro_str($LinNombre.text,"ÁÉÍÓÚáéíóú" +
+	var nombre = raiz.filtro_str($LinNombre.text,"ÁÉÍÓÚáéíóú" +
 		"ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789 ").strip_edges()
 	if nombre == "":
 		raiz.set_mensaje("No Name!!!")
@@ -45,10 +45,3 @@ func _on_btn_crear_pressed() -> void:
 	var id = raiz.modelo.create(nombre, gen, param)
 	raiz.set_enmira(id)
 	raiz.save_all()
-
-func filtro_str(txt: String, mask: String) -> String:
-	var res = ""
-	for c in txt:
-		if mask.contains(c):
-			res += c
-	return res

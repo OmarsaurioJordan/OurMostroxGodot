@@ -1,8 +1,11 @@
 extends Node
 
+const CLAVE_SECRETA = "iwanttodestroyyou"
+
 @onready var modelo = $Modelo
 
-var enmira = []
+var enmira: Array = []
+var clave_secreta: String = ""
 
 func _ready() -> void:
 	randomize()
@@ -10,6 +13,26 @@ func _ready() -> void:
 	$Mensaje.visible = false
 	cambio("menu")
 	call_deferred("open_all")
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed:
+		var char_pulsado = char(event.unicode)
+		# para evitar que ingresencaracteres especiales
+		if event.unicode != 0:
+			clave_secreta += char_pulsado
+			if clave_secreta.length() > CLAVE_SECRETA.length():
+				clave_secreta = clave_secreta.right(-1)
+			if clave_secreta.to_lower() == CLAVE_SECRETA.to_lower():
+				if $Monstruo.is_modo_receive_imagen():
+					var ente_id = get_actual_ente().get_id()
+					$Modelo.destruir(ente_id)
+					$Galeria.destruir(ente_id)
+					cambio("galeria")
+					set_mensaje("Destroyed!!!")
+					call_deferred("save_all")
+				clave_secreta = ""
+		else:
+			clave_secreta = ""
 
 func _on_files_dropped(files: PackedStringArray) -> void:
 	var path = files[0]
@@ -43,10 +66,14 @@ func cambio(ventana: String, ind: int = -1) -> void:
 	$Monstruo.visible = false
 	$Lucha.visible = false
 	$Cita.visible = false
+	$Config.visible = false
 	match ventana:
 		"menu", "":
 			$Menu.cambio()
+		"config":
+			$Config.cambio()
 		"galeria":
+			enmira = []
 			$Galeria.cambio()
 		"nuevo":
 			$Nuevo.cambio()
@@ -120,3 +147,10 @@ func open_all() -> void:
 		var data = file.get_as_text()
 		file.close()
 		open_txt(data)
+
+func filtro_str(txt: String, mask: String) -> String:
+	var res = ""
+	for c in txt:
+		if mask.contains(c):
+			res += c
+	return res

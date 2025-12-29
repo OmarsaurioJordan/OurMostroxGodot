@@ -345,7 +345,7 @@ const TERRENOS = [
 	[ # 1
 		"City", "Ciudad", 
 		"es un espacio urbano diurno, muy concurrido, es una zona central rodeada de edificaciónes comerciales, tiene muchos puestos de venta en las calles, hay vitrinas de vidrio de exhibición, hay muchas personas caminando por el lugar, muchos carros, motos y camiónes pasando lentamente a causa del lento tráfico",
-		"Zombies: Realmente no es un solo oponente, de entre los peatones y conductores de vehículos, comienzan a salir algunos humanos infectados, similares a zombies pero no están muertos, viven con una infección que los controla y los impulsa a atacar a algún monstruo cercano, son al menos 30, sus cuerpos son débiles y pero se mueven con la agilidad humana, atacan con ira y sed de sangre, toman objetos de su alrrededor para atacar mejor, parecen estar tan infectados que no obedecen al miedo pese a seguir siendo humanos mortales"
+		"Zombies: Realmente no es un solo oponente, de entre los peatones y conductores de vehículos, comienzan a salir algunos humanos infectados, similares a zombies pero no están muertos, viven con una infección que los controla y los impulsa a atacar a algún monstruo cercano, son al menos 30, sus cuerpos son débiles y pero se mueven con la agilidad humana, atacan con ira y sed de sangre, toman objetos de su alrrededor para atacar mejor, parecen estar tan infectados que no obedecen al miedo pese a seguir siendo humanos mortales, jamás hullen, luchan a muerte"
 	],
 	[ # 2
 		"River", "Rio", 
@@ -389,8 +389,18 @@ const TERRENOS = [
 	]
 ]
 
+var idioma: String = "en"
+
 func _ready() -> void:
 	randomize()
+	obtener_idioma()
+
+func obtener_idioma() -> void:
+	var locale = OS.get_locale_language()
+	if locale == "es":
+		idioma = "es"
+	else:
+		idioma = "en"
 
 func get_random_name(femenino=true, masculino=true) -> String:
 	var nombres = []
@@ -432,6 +442,7 @@ func get_prompt_desc(nombre: String, genero: int, param: Array) -> String:
 
 func get_prompt_desc_ente(ente: Node) -> String:
 	var prompt = get_parent().get_node("Prompts").PROMPT_DESC
+	prompt = prompt.replace("$$$", "español" if idioma == "es" else "inglés")
 	return prompt.replace("$", ente.prompt_descrip)
 
 func get_prompt_lucha(monster_b: Node, lugar: int) -> String:
@@ -447,10 +458,29 @@ func get_prompt_lucha(monster_b: Node, lugar: int) -> String:
 
 func get_prompt_lucha_ente(id_a: String, lucha: String) -> String:
 	var prompt = get_parent().get_node("Prompts").PROMPT_FIGHT
+	prompt = prompt.replace("$$$", "español" if idioma == "es" else "inglés")
 	var ente = get_ente(id_a)
 	var desc = ente.nombre.replace("|", "") + ": " + ente.descripcion.replace("|", "")
 	var piezas = lucha.split("|")
 	return prompt.replace("$A", desc).replace("$B", piezas[0]).replace("$E", piezas[1])
+
+func get_prompt_cita(monster_b: Node, genero=0) -> String:
+	var res: String
+	if monster_b == null:
+		if genero == 0:
+			res = "Mujer: (comodín)"
+		else:
+			res = "Hombre: (comodín)"
+	else:
+		res = monster_b.nombre + ": " + monster_b.descripcion
+	return res
+
+func get_prompt_cita_ente(id_a: String, cita: String) -> String:
+	var prompt = get_parent().get_node("Prompts").PROMPT_DATE
+	prompt = prompt.replace("$$$", "español" if idioma == "es" else "inglés")
+	var ente = get_ente(id_a)
+	var desc = ente.nombre + ": " + ente.descripcion
+	return prompt.replace("$A", desc).replace("$B", cita)
 
 func create(nombre: String, genero: int, param: Array) -> String:
 	var ente = ENTE.instantiate()
@@ -501,3 +531,8 @@ func get_parejas(id_exeption: String) -> Array:
 			res.append(ent.get_id())
 	res.shuffle()
 	return res
+
+func destruir(id: String) -> void:
+	for ent in get_children():
+		if ent.get_id() == id:
+			ent.free()

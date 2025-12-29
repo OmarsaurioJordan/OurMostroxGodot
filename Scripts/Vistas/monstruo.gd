@@ -1,6 +1,7 @@
 extends Panel
 
 const RESULTADO = preload("res://Scenes/Componentes/resultado.tscn")
+const DESOVE = preload("res://Scenes/Componentes/desove.tscn")
 
 @onready var raiz = get_parent()
 
@@ -30,6 +31,7 @@ func cambio(ventana: String, ind: int = -1) -> void:
 		"subcitas":
 			$SubCitas.visible = true
 			$BtnCitas.button_pressed = true
+			actualize_subcitas()
 		"unalucha":
 			$UnaLucha.visible = true
 			$BtnLuchas.button_pressed = true
@@ -37,6 +39,7 @@ func cambio(ventana: String, ind: int = -1) -> void:
 		"unacita":
 			$UnaCita.visible = true
 			$BtnCitas.button_pressed = true
+			actualize_unacita()
 
 func actualize_info() -> void:
 	var ente = raiz.get_actual_ente()
@@ -100,6 +103,38 @@ func actualize_unalucha() -> void:
 		else:
 			$UnaLucha/Scroll/Textos/Resultado.self_modulate = Color("#ff3648")
 
+func actualize_unacita() -> void:
+	var ente = raiz.get_actual_ente()
+	var cita = ente.get_cita_ind(actual_ind)
+	var oponente = raiz.modelo.get_ente(cita[ente.CITA.ID_PAR])
+	var img_op = load("res://Sprites/General/default_card.png")
+	if oponente != null:
+		if oponente.imagen != "":
+			img_op = raiz.base64_to_image(oponente.imagen)
+	if cita[ente.CITA.ID_PAR] == "":
+		img_op = load("res://Sprites/General/humans.png")
+	if ente.imagen == "":
+		$UnaCita/Scroll/Textos/Cita/ImagenA.texture =\
+			load("res://Sprites/General/default_card.png")
+	else:
+		$UnaCita/Scroll/Textos/Cita/ImagenA.texture = raiz.base64_to_image(ente.imagen)
+	$UnaCita/Scroll/Textos/Cita/ImagenA/Nombre.text = ente.nombre
+	$UnaCita/Scroll/Textos/Cita/ImagenB.texture = img_op
+	$UnaCita/Scroll/Textos/Cita/ImagenB/Nombre.text = cita[ente.CITA.NOMBRE_PAR]
+	if cita[ente.CITA.NARRACION] == "":
+		$UnaCita/Scroll/Textos/Narracion.text = "Date:\n\n*** void ***"
+		$UnaCita/Scroll/Textos/Resultado.text = "Result: ???"
+		$UnaCita/Scroll/Textos/Ficha.visible = false
+	else:
+		$UnaCita/Scroll/Textos/Narracion.text = "Date:\n\n" + cita[ente.CITA.NARRACION]
+		$UnaCita/Scroll/Textos/Ficha.visible = cita[ente.CITA.ID_HIJO] != ""
+		if $UnaCita/Scroll/Textos/Ficha.visible:
+			$UnaCita/Scroll/Textos/Ficha.actuafind(raiz.modelo, cita[ente.CITA.ID_HIJO],
+				cita[ente.CITA.NOMBRE_HIJO], cita[ente.CITA.GENERO])
+			$UnaCita/Scroll/Textos/Resultado.text = "Result: Yes\n"
+		else:
+			$UnaCita/Scroll/Textos/Resultado.text = "Result: Failure"
+
 func actualize_subluchas() -> void:
 	var ente = raiz.get_actual_ente()
 	var oponentes = ente.get_luchas_oponentes()
@@ -111,12 +146,24 @@ func actualize_subluchas() -> void:
 	for res in $SubLuchas/Scroll/Luchas.get_children():
 		res.eliminar()
 
-func new_resultado(ente_id: String, oponente_id: String) -> Node:
-	for res in $SubLuchas/Scroll/Luchas.get_children():
+func actualize_subcitas() -> void:
+	var ente = raiz.get_actual_ente()
+	var oponentes = ente.get_citas_oponentes()
+	for res in $SubCitas/Scroll/Citas.get_children():
+		res.set_eliminable()
+	for op in oponentes:
+		var res = new_resultado(ente.get_id(), op, DESOVE, $SubCitas/Scroll/Citas)
+		res.actualize(raiz)
+	for res in $SubCitas/Scroll/Citas.get_children():
+		res.eliminar()
+
+func new_resultado(ente_id: String, oponente_id: String, objeto=RESULTADO,
+		lista=$SubLuchas/Scroll/Luchas) -> Node:
+	for res in lista.get_children():
 		if res.get_activo(ente_id, oponente_id):
 			return res
-	var res = RESULTADO.instantiate()
-	$SubLuchas/Scroll/Luchas.add_child(res)
+	var res = objeto.instantiate()
+	lista.add_child(res)
 	res.set_activo(ente_id, oponente_id)
 	return res
 
@@ -269,6 +316,73 @@ func _on_btn_set_fight_pressed() -> void:
 				return
 	raiz.set_mensaje("Bad Data!!!")
 
-
 func _on_btn_volver_pressed() -> void:
 	cambio("subluchas")
+
+func _on_btn_prm_date_pressed() -> void:
+	var ente = raiz.get_actual_ente()
+	var cita = ente.get_cita_ind(actual_ind)
+	DisplayServer.clipboard_set(raiz.modelo.get_prompt_cita_ente(
+		ente.get_id(), cita[ente.CITA.PROMPT]))
+	raiz.set_mensaje("Copied!!!")
+
+func _on_btn_set_date_pressed() -> void:
+	var txt = DisplayServer.clipboard_get()
+	if txt == "":
+		raiz.set_mensaje("No Data In\nClipboard!!!")
+		return
+	var ente = raiz.get_actual_ente()
+	var cita = ente.get_cita_ind(actual_ind)
+	if cita[ente.CITA.NARRACION] != "":
+		raiz.set_mensaje("Full Data!!!")
+		return
+	# intentar parsear el JSON
+	var json = JSON.new()
+	var error = json.parse(txt)
+	if error != OK:
+		raiz.set_mensaje("Bad JSON!!!")
+		return
+	# obtener datos de diccionario
+	var data = json.data
+	if typeof(data) != TYPE_DICTIONARY:
+		raiz.set_mensaje("Bad Data!!!")
+		return
+	# verificar las claves
+	if data.has("txt") and data.has("fin"):
+		# verificar los formatos de la data
+		if typeof(data["txt"]) == TYPE_STRING and typeof(data["fin"]) == TYPE_BOOL:
+			# verificar que contenga el nombre del monstruo
+			var nombre_op = cita[ente.CITA.PROMPT].split(":")[0]
+			var titulo = ente.nombre + " date " + nombre_op
+			if data["txt"].contains(titulo):
+				cita[ente.CITA.NARRACION] = data["txt"]
+				# creacion del hijo
+				var id = ""
+				if data["fin"]:
+					var param: Array = []
+					var adn: Array = cita[ente.CITA.ADN_PAR]
+					if adn.is_empty():
+						for i in range(ente.parametros.size()):
+							adn.append(0)
+					for i in range(ente.parametros.size()):
+						param.append(ente.parametros[i] if randf() < 0.5 else adn[i])
+					id = raiz.modelo.create(cita[ente.CITA.NOMBRE_HIJO],
+						cita[ente.CITA.GENERO], param)
+					cita[ente.CITA.ID_HIJO] = id
+				# agregar los resultados tambien al otro monstruo
+				var oponente = raiz.modelo.get_ente(cita[ente.CITA.ID_PAR])
+				if oponente != null:
+					var prompt = raiz.modelo.get_prompt_cita(ente)
+					var ind = oponente.new_cita(ente.get_id(), ente.nombre, prompt,
+						cita[ente.CITA.NOMBRE_HIJO], cita[ente.CITA.GENERO], ente.parametros)
+					cita = oponente.get_cita_ind(ind)
+					cita[ente.CITA.NARRACION] = data["txt"]
+					cita[ente.CITA.ID_HIJO] = id
+				# cambiar la vista
+				cambio("unacita", actual_ind)
+				raiz.save_all()
+				return
+	raiz.set_mensaje("Bad Data!!!")
+
+func _on_btn_volver_c_pressed() -> void:
+	cambio("subcitas")

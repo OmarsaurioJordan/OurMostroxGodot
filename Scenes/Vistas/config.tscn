@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvdwl5tqu7rxl"]
+
+[ext_resource type="Theme" uid="uid://63lmbp6v151r" path="res://Sprites/Config/theme.tres" id="1_hougu"]
+[ext_resource type="Script" uid="uid://cpoyg1b5luc5v" path="res://Scripts/Vistas/config.gd" id="2_8wv1e"]
+[ext_resource type="Texture2D" uid="uid://b244g0uibf8dn" path="res://Sprites/General/banner.png" id="3_myxx4"]
+
+[node name="Config" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_hougu")
+script = ExtResource("2_8wv1e")
+metadata/_edit_lock_ = true
+
+[node name="Header" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -25.0
+offset_right = 621.0
+offset_bottom = 221.0
+texture = ExtResource("3_myxx4")
+expand_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 0
+offset_top = 122.0
+offset_right = 619.0
+offset_bottom = 219.0
+theme = ExtResource("1_hougu")
+theme_override_font_sizes/font_size = 60
+text = "Our Mostrox"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnMenu" type="Button" parent="."]
+offset_left = 17.0
+offset_top = 12.0
+offset_right = 76.0
+offset_bottom = 68.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_hougu")
+text = "<"
+metadata/_edit_lock_ = true
+
+[node name="Informacion" type="Label" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 244.0
+offset_right = 596.0
+offset_bottom = 915.0
+theme = ExtResource("1_hougu")
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 25
+text = "Information:
+
+Our Mostrox Godot v1, is an interactive software to generate prompts, to let AIs to create: images and narratives, this software was made with the help of AIs, but beyond that, it exists because the existence of AIs, so its design is focused on the generative AIs nature and capabilityes, mainly the multi-variable case analysis. Even so, you as an human can do the task too, only take the programmatically generated prompt to draw and write for yourself, and in that way, compete and prove your worth. This is an experimental software
+
+
+Monster Elimination:
+
+you can type \"iwanttodestroyyou\" in a monster main window, to delete it permanently"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="BtnIdioma" type="Button" parent="."]
+offset_left = 132.0
+offset_top = 968.0
+offset_right = 501.0
+offset_bottom = 1024.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_hougu")
+text = "Prompts Languaje: EN"
+metadata/_edit_lock_ = true
+
+[node name="Creditos" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 1047.0
+offset_right = 617.0
+offset_bottom = 1100.0
+theme = ExtResource("1_hougu")
+text = "by Omwekiatl 2025"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="BtnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="BtnIdioma" to="." method="_on_btn_idioma_pressed"]

@@ -1,12 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bl6uash3f4fnp"]
+[gd_scene load_steps=4 format=3 uid="uid://bl6uash3f4fnp"]
 
 [ext_resource type="Theme" uid="uid://63lmbp6v151r" path="res://Sprites/Config/theme.tres" id="1_tmlin"]
 [ext_resource type="Texture2D" uid="uid://bmxkvimhor7gv" path="res://Sprites/General/default_card.png" id="2_f3d5i"]
+[ext_resource type="Script" uid="uid://c3kso42adakfp" path="res://Scripts/Componentes/desove.gd" id="2_rdi45"]
 
 [node name="Desove" type="Label"]
 self_modulate = Color(1, 1, 1, 0.00392157)
 offset_right = 554.0
-offset_bottom = 165.0
+offset_bottom = 270.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_tmlin")
 theme_override_font_sizes/font_size = 25
@@ -20,6 +21,7 @@ text = ".
 .
 .
 ."
+script = ExtResource("2_rdi45")
 metadata/_edit_lock_ = true
 
 [node name="BtnSeleccion" type="Button" parent="."]
@@ -28,7 +30,7 @@ layout_mode = 0
 offset_left = 5.0
 offset_top = 4.0
 offset_right = 551.0
-offset_bottom = 373.0
+offset_bottom = 374.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_tmlin")
@@ -56,14 +58,24 @@ horizontal_alignment = 1
 autowrap_mode = 3
 metadata/_edit_lock_ = true
 
+[node name="Nivel" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0.513726)
+offset_left = 193.0
+offset_top = 125.0
+offset_right = 323.0
+offset_bottom = 182.0
+text = "LVL: 1"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
 [node name="Resultado" type="Label" parent="."]
 layout_mode = 0
-offset_left = 201.0
-offset_top = 137.0
-offset_right = 350.0
-offset_bottom = 226.0
-text = "Result:
-???"
+offset_left = 186.0
+offset_top = 178.0
+offset_right = 361.0
+offset_bottom = 241.0
+text = "Result: ???"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

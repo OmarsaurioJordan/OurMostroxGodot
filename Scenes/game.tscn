@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://crops5qwsrusa"]
+[gd_scene load_steps=12 format=3 uid="uid://crops5qwsrusa"]
 
 [ext_resource type="PackedScene" uid="uid://dacn2ep32ifrp" path="res://Scenes/Vistas/menu.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://va2mrfi5sobw" path="res://Scripts/game.gd" id="1_v158k"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://nwy30g8x7hqn" path="res://Scenes/Vistas/lucha.tscn" id="7_rfjv2"]
 [ext_resource type="PackedScene" uid="uid://dgwv6jwqqjsam" path="res://Scenes/Vistas/cita.tscn" id="8_1phco"]
 [ext_resource type="Theme" uid="uid://63lmbp6v151r" path="res://Sprites/Config/theme.tres" id="9_h4fw4"]
+[ext_resource type="PackedScene" uid="uid://cvdwl5tqu7rxl" path="res://Scenes/Vistas/config.tscn" id="11_o5yvi"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_v158k")
@@ -31,6 +32,8 @@ script = ExtResource("2_h4fw4")
 [node name="Lucha" parent="." instance=ExtResource("7_rfjv2")]
 
 [node name="Cita" parent="." instance=ExtResource("8_1phco")]
+
+[node name="Config" parent="." instance=ExtResource("11_o5yvi")]
 
 [node name="Mensaje" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0.392157)

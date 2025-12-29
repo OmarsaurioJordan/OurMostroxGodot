@@ -2,9 +2,6 @@ extends Panel
 
 @onready var raiz = get_parent()
 
-func _ready() -> void:
-	pass
-
 func cambio() -> void:
 	visible = true
 
@@ -20,3 +17,6 @@ func _on_btn_exportar_pressed() -> void:
 	var data = raiz.save_txt()
 	DisplayServer.clipboard_set(data)
 	raiz.set_mensaje("Copied!!!")
+
+func _on_btn_config_pressed() -> void:
+	raiz.cambio("config")
