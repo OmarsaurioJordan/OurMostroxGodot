@@ -1,20 +1,22 @@
-# Our Mostrox Godot
+# Our Mostrox (Godot)
 
-Requiere Godot 4
+Requires Godot 4
 
-Finalizado en 2025
+Completed in 2025
 
-Este videojuego es el remake de su versión hecha para móvil, mejorado y completado, se trata de un proyecto enfocado en la IA generativa, la premisa de diseño es ¿Cuál es la forma adecuada de usar y aprovechar dicha tecnología en un gameplay? una cosa es hacer algo con IA, tomando el atajo a la hora de codificar y generar assets, lo que es poco ético y da una mala impresión en el producto final, mismo que puede verse como carente de esfuerzo o hecho como collage de cosas rándom. Y otra cosa es generar una experiencia que nace de las capacidades y cuálidades mismas de esta tecnología, aportando un gameplay único y de nicho. Un gameplay que no habría existido quizá sin la existencia de las IA generativas.
+This videogame is a remake of its original mobile version, now improved and fully completed. It is a project focused on generative AI, built around a core design question: what is the right way to use and truly take advantage of this technology within gameplay?
 
-Our Mostrox es un generador de prompts por código, donde los monstruos son creados a partir de elecciónes discretizadas, luego externamente el jugador puede aprovechar una de las tantas tecnologías generativas, para convertir el array de números en narrativa e imágen. Esa es solo la primera parte, lego los combates entre monstruos se realizan de la misma manera, se aprovecha la capacidad racional y de análisis multi-variable, con toque alucinativo de la IA para dar resultados vibrantes pero objetivos.
+One thing is to use AI as a shortcut for coding or asset generation, which is unethical and often leaves a poor impression in the final product, making it feel lazy or like a random collage of disconnected elements. Another, very different approach, is to design an experience that emerges naturally from the capabilities and qualities of generative AI itself, resulting in a unique, niche gameplay that might not have existed without this technology.
 
-Esto en otras circunstancias dependería de dos mundos diferentes, el del escritor narrativo, que pese a no poder hacer análisis multi-variable a modo de simulación, puede ofrecer narrativas más épicas y creativas. O por otro lado, el mundo del programador, quién podría hacer sistemas simulados o probabilísticos para calcular qué monstruo gana. La IA en este caso converge ambos en un resultado sencillo pero suficiente.
+Our Mostrox is a code-driven prompt generator. Monsters are created from discretized choices, represented internally as numerical arrays. Externally, the player can then use any of the many available generative technologies to transform those numbers into narrative descriptions and images. That is only the first step. Monster battles are handled in a similar way: the system leverages the AI’s rational, multi-variable analysis combined with a controlled hallucinatory touch, producing results that are vivid yet objective.
 
-Lo mejor es que el usuario es libre de lección, bien podría pasar el prompt a un artista que pinte la representación del monstruo, o a un escritor que narre una épica batalla, el sistema es totalmente capaz de manejar cualquier tipo de entrada. Podría servir como experimento social y comparativo para enfrentar el puro arte humano versus la aberración y locura sistemática de las máquinas.
+Under normal circumstances, this process would belong to two very different worlds. On one side, the narrative writer, who may not perform multi-variable simulations but can deliver more epic and creative storytelling. On the other, the programmer, who could build simulated or probabilistic systems to calculate which monster wins. In this project, AI converges both approaches into a simple yet sufficient result.
 
-Como desarrollador de videojuegos, hago este producto a modo experimental, mi marca se centra en un estilo propio dibujado a mano y respaldado por años programando cuando no existía la IA, no avalo el uso de dicha tecnología generativa en el mundo creativo, pues suplanta la creatividad, talento y expresión innatas, a la vez que promueve la pereza y la cultura de la inmediatéz. Este es un caso excepcional a mi portafolio, cuyo propósito es enrriquecer al mismo, mostrando la capacidad de acople a una tecnología nueva, usándola en un gameplay que aprovecha su naturaleza.
+Most importantly, the user is free to choose. The generated prompt can be handed to a visual artist to paint the monster, or to a writer to narrate an epic battle. The system is flexible enough to handle any kind of input. It can even serve as a social and comparative experiment, confronting pure human art against the systematic aberration and madness of machines.
 
-puede probarlo en: https://omwekiatl.itch.io/ourmostrox
+As a videogame developer, I created this product as an experimental work. My personal brand is centered on a hand-drawn style, backed by years of programming experience from a time before AI existed. I do not endorse the use of generative AI in the creative world, as it replaces innate creativity, talent, and expression, while encouraging laziness and a culture of immediacy. This project is an exception within my portfolio. Its purpose is to enrich it by demonstrating adaptability to a new technology, using it in a gameplay context that genuinely leverages its nature.
 
-Licencia:
-puede hacer lo que quiera con este software siempre que de créditos y No sea con propósitos comerciales.
+You can try it at: https://omwekiatl.itch.io/ourmostrox
+
+License:
+You may do whatever you want with this software as long as you give proper credit and do not use it for commercial purposes.
